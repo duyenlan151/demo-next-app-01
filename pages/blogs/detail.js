@@ -20,7 +20,7 @@ export default function Detail() {
   function handleValueChange(e) {
     let key = e.target.id;
     let value = e.target.value;
-    
+
     setMyBlog({
       ...myBlog,
       [key]: value
@@ -31,8 +31,8 @@ export default function Detail() {
     e.preventDefault();
     // data lưu dưới local store
     let id = myBlog.url; 
-    let obj =  data.findIndex((elm) => elm.url === id);
-    data[obj] = myBlog;
+    let index =  data.findIndex((elm) => elm.url === id);
+    data[index] = myBlog;
     localStorage.setItem("blogs", JSON.stringify(data));
     setIsEdit(true);
 
