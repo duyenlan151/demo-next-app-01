@@ -140,9 +140,9 @@ export default function Detail() {
                 <label htmlFor="pwd">Date Create:</label>
                 {/* <p>{myBlog.content}</p> */}
                 <input
-                  type="text"
+                  type="date"
                   className="form-control"
-                  id="Date"
+                  id="date"
                   value=""
                   disabled={isEdit}
                   onChange={handleValueChange}

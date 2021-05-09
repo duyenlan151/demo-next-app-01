@@ -3,10 +3,14 @@ import Image from "next/image";
 import axios from 'axios';
 import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
-import Link from 'next/link'
+import Link from 'next/link';
+import useTrans from './hooks/useTrans'
+import { useRouter } from "next/router"
 
 export default function Home() {
   const [myBanner, setMyBanner] = useState([]);
+  const trans = useTrans();
+  const router = useRouter()
 
   useEffect(() => {
     async function fetchPostList() {
@@ -23,6 +27,11 @@ export default function Home() {
     fetchPostList();
     console.log(myBanner);
   }, []);// empty array chi chay dung 1 lan, khong bi phu thuoc 
+
+  const changeLang = (lang) => {
+    router.push('/', '/', { locale: lang });
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -46,7 +55,6 @@ export default function Home() {
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       </Head>
-
       <nav className="navbar navbar-default navbar-fixed-top">
           <div className="container">
             <div className="navbar-header">
@@ -60,7 +68,7 @@ export default function Home() {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#myPage">
+              <a className="navbar-brand" href="/">
                 Home
               </a>
             </div>
@@ -68,6 +76,14 @@ export default function Home() {
               <ul className="nav navbar-nav navbar-right">
                 <li>
                   <a href="/blogs">BLOGS</a>
+                </li>
+                <li className="dropdown">
+                  <a className="dropdown-toggle" data-toggle="dropdown" href="#">Language
+                  <span className="caret"></span></a>
+                  <ul className="dropdown-menu">
+                    <li><a onClick={() => changeLang('vi')}  href="javascript:void(0)">vi</a></li>
+                    <li><a onClick={() => changeLang('en')} href="javascript:void(0)">en</a></li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -125,6 +141,13 @@ export default function Home() {
           </a>
         </div>
 
+      <h1 className={styles.title}>
+        { trans.home.title }
+      </h1>
+
+      <p className={styles.description}>
+          { trans.home.content }
+      </p>
       {/* banner */}
       <main>
         
