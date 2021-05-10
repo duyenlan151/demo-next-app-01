@@ -13,11 +13,11 @@ export default function Detail() {
   const [isEdit, setIsEdit] = useState(true);
   //  const isEdit = useRef(false);
 
-  function handleClick() {
+  const handleClick = () => {
     setIsEdit(false);
   }
 
-  function handleValueChange(e) {
+  const handleValueChange = (e) => {
     let key = e.target.id;
     let value = e.target.value;
 
@@ -25,6 +25,18 @@ export default function Detail() {
       ...myBlog,
       [key]: value
     });
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // data lưu dưới local store
+    let id = myBlog.url; 
+    let index =  data.findIndex((elm) => elm.url === id);
+    data[index] = myBlog;
+    localStorage.setItem("blogs", JSON.stringify(data));
+    setIsEdit(true);
+
+    router.push('/blogs');
   }
 
   function handleSubmit(e) {
