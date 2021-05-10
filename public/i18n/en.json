@@ -3,5 +3,9 @@
   "home": {
     "title": "Welcome to Viblo!",
     "content": "Let's stared"
-}
+  },
+  "navbar": {
+    "home": "Home",
+    "blogs": "Blogs"
+  }
 }

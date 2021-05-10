@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-import styles from "../../styles/Home.module.css";
+// import styles from "../../styles/Home.module.css";
 
 export default function Detail() {
   const router = useRouter();
@@ -13,10 +13,12 @@ export default function Detail() {
   const [isEdit, setIsEdit] = useState(true);
   //  const isEdit = useRef(false);
 
+  // handle click isEdit
   const handleClick = () => {
     setIsEdit(false);
   }
 
+  // handle value change on input
   const handleValueChange = (e) => {
     let key = e.target.id;
     let value = e.target.value;
@@ -27,10 +29,10 @@ export default function Detail() {
     });
   }
 
+  // Submit lưu data
   const handleSubmit = (e) => {
     e.preventDefault();
-    // data lưu dưới local store
-    let id = myBlog.url; 
+    let id = myBlog[`${url}`]; 
     let index =  data.findIndex((elm) => elm.url === id);
     data[index] = myBlog;
     localStorage.setItem("blogs", JSON.stringify(data));
@@ -39,18 +41,7 @@ export default function Detail() {
     router.push('/blogs');
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    // data lưu dưới local store
-    let id = myBlog.url; 
-    let index =  data.findIndex((elm) => elm.url === id);
-    data[index] = myBlog;
-    localStorage.setItem("blogs", JSON.stringify(data));
-    setIsEdit(true);
-
-    router.push('/blogs');
-  }
-
+  // similar componentDidMount and compontDidupdate
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem("blogs"));
     if (data) {
@@ -58,7 +49,10 @@ export default function Detail() {
         let item = data.find((item) => item.url === router.query.id);
         if (item) setMyBlog(item);
     }
-  }, []);
+    return () => {
+      // componentWillUnmount: component bị remove khỏi cấu trúc DOM
+    }
+  }, [myBlog]); // lắng nghe sự thay đổi của myBlog
 
   return (
     <div className="container">

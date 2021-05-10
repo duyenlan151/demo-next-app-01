@@ -8,11 +8,12 @@ const useTrans = () => {
     let { locale } = useRouter();
     const [ cookie, setCookie ] = useCookies([keyLang]);
     console.log(locale);
-    setCookie(keyLang, locale);
-    // if(cookie[keyLang] !== locale){
-    //     console.log('set cookie');
-    //   setCookie(keyLang, locale);
-    // }else{
+
+    if(cookie[keyLang] !== locale){
+        // console.log('set cookie');
+        setCookie(keyLang, locale);
+    }
+    // else{
     //     console.log('unset cookie');
     // }
     // const trans = cookie === 'vi' ? vi : en;

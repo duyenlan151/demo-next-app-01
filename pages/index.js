@@ -69,13 +69,13 @@ export default function Home() {
                 <span className="icon-bar"></span>
               </button>
               <a className="navbar-brand" href="/">
-                Home
+              { trans.navbar.home }
               </a>
             </div>
             <div className="collapse navbar-collapse" id="myNavbar">
               <ul className="nav navbar-nav navbar-right">
                 <li>
-                  <a href="/blogs">BLOGS</a>
+                  <a href="/blogs"> { trans.navbar.blogs }</a>
                 </li>
                 <li className="dropdown">
                   <a className="dropdown-toggle" data-toggle="dropdown" href="#">Language
@@ -104,7 +104,7 @@ export default function Home() {
 
           <div className={`carousel-inner `} pl="carousel-inner" role="listbox">
             {myBanner.map((blog, index) => (
-                <div key={index} className={index === 0? 'item active': 'item'}>
+                <div key={index} className={index === 0 ? 'item active': 'item'}>
                   <img src={blog.urlToImage} alt="Chicago" />
                   <div className="carousel-caption">
                     <h2>{blog.title}</h2>
@@ -141,16 +141,15 @@ export default function Home() {
           </a>
         </div>
 
-      <h1 className={styles.title}>
+      {/* <h1 className={styles.title}>
         { trans.home.title }
       </h1>
 
       <p className={styles.description}>
           { trans.home.content }
-      </p>
+      </p> */}
       {/* banner */}
       <main>
-        
         <div id="band" className="container text-center">
           <h3>THE BAND</h3>
           <p>
@@ -170,288 +169,7 @@ export default function Home() {
             ea commodo consequat.
           </p>
             <br/><br/>
-          {/* <div className={`row ${styles.row}`}>
-            {myBanner.map((blog, index) => ( 
-              <Link
-              key={blog.url}
-              href={{
-                pathname: '/blogs/detail',
-                query: { id: blog.url },
-              }}
-            >
-              <div key={index}  className={`col-sm-4 ${styles.item}`}>
-                <div className={`thumbnail ${styles.thumbnail}`}>
-                  <img
-                    src={blog.urlToImage}
-                    alt="San Francisco"
-                    width="400"
-                    height="300"
-                  />
-                  <p>
-                    <strong>{blog.title}</strong>
-                  </p>
-                  <p>{blog.publishedAt = new Date().toDateString()}</p>
-                  <button
-                    className="btn"
-                    data-toggle="modal"
-                    data-target="#myModal"
-                  >
-                    Buy Tickets
-                  </button>
-                </div>
-              </div>
-            </Link>
-            ))}
-          </div> */}
         </div>
-
-        {/* <div id="tour" className="bg-1">
-          <div className="container">
-            <h3 className="text-center">TOUR DATES</h3>
-            <p className="text-center">
-              Lorem ipsum we'll play you some music. Remember to book your
-              tickets!
-            </p>
-            <ul className="list-group">
-              <li className="list-group-item">
-                September <span className="label label-danger">Sold Out!</span>
-              </li>
-              <li className="list-group-item">
-                October <span className="label label-danger">Sold Out!</span>
-              </li>
-              <li className="list-group-item">
-                November <span className="badge">3</span>
-              </li>
-            </ul>
-
-            <div className="row text-center">
-              <div className="col-sm-4">
-                <div className="thumbnail">
-                  <img src="paris.jpg" alt="Paris" width="400" height="300" />
-                  <p>
-                    <strong>Paris</strong>
-                  </p>
-                  <p>Friday 27 November 2015</p>
-                  <button
-                    className="btn"
-                    data-toggle="modal"
-                    data-target="#myModal"
-                  >
-                    Buy Tickets
-                  </button>
-                </div>
-              </div>
-              <div className="col-sm-4">
-                <div className="thumbnail">
-                  <img
-                    src="newyork.jpg"
-                    alt="New York"
-                    width="400"
-                    height="300"
-                  />
-                  <p>
-                    <strong>New York</strong>
-                  </p>
-                  <p>Saturday 28 November 2015</p>
-                  <button
-                    className="btn"
-                    data-toggle="modal"
-                    data-target="#myModal"
-                  >
-                    Buy Tickets
-                  </button>
-                </div>
-              </div>
-              <div className="col-sm-4">
-                <div className="thumbnail">
-                  <img
-                    src="sanfran.jpg"
-                    alt="San Francisco"
-                    width="400"
-                    height="300"
-                  />
-                  <p>
-                    <strong>San Francisco</strong>
-                  </p>
-                  <p>Sunday 29 November 2015</p>
-                  <button
-                    className="btn"
-                    data-toggle="modal"
-                    data-target="#myModal"
-                  >
-                    Buy Tickets
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="modal fade" id="myModal" role="dialog">
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <button type="button" className="close" data-dismiss="modal">
-                    ×
-                  </button>
-                  <h4>
-                    <span className="glyphicon glyphicon-lock"></span> Tickets
-                  </h4>
-                </div>
-                <div className="modal-body">
-                  <htmlForm role="htmlForm">
-                    <div className="htmlForm-group">
-                      <label htmlFor="psw">
-                        <span className="glyphicon glyphicon-shopping-cart"></span>{" "}
-                        Tickets, $23 per person
-                      </label>
-                      <input
-                        type="number"
-                        className="htmlForm-control"
-                        id="psw"
-                        placeholder="How many?"
-                      />
-                    </div>
-                    <div className="htmlForm-group">
-                      <label htmlFor="usrname">
-                        <span className="glyphicon glyphicon-user"></span> Send
-                        To
-                      </label>
-                      <input
-                        type="text"
-                        className="htmlForm-control"
-                        id="usrname"
-                        placeholder="Enter email"
-                      />
-                    </div>
-                    <button type="submit" className="btn btn-block">
-                      Pay
-                      <span className="glyphicon glyphicon-ok"></span>
-                    </button>
-                  </htmlForm>
-                </div>
-                <div className="modal-footer">
-                  <button
-                    type="submit"
-                    className="btn btn-danger btn-default pull-left"
-                    data-dismiss="modal"
-                  >
-                    <span className="glyphicon glyphicon-remove"></span> Cancel
-                  </button>
-                  <p>
-                    Need <a href="#">help?</a>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="contact" className="container">
-          <h3 className="text-center">Contact</h3>
-          <p className="text-center">
-            <em>We love our fans!</em>
-          </p>
-
-          <div className="row">
-            <div className="col-md-4">
-              <p>Fan? Drop a note.</p>
-              <p>
-                <span className="glyphicon glyphicon-map-marker"></span>Chicago,
-                US
-              </p>
-              <p>
-                <span className="glyphicon glyphicon-phone"></span>Phone: +00
-                1515151515
-              </p>
-              <p>
-                <span className="glyphicon glyphicon-envelope"></span>Email:
-                mail@mail.com
-              </p>
-            </div>
-            <div className="col-md-8">
-              <div className="row">
-                <div className="col-sm-6 htmlForm-group">
-                  <input
-                    className="htmlForm-control"
-                    id="name"
-                    name="name"
-                    placeholder="Name"
-                    type="text"
-                    required
-                  />
-                </div>
-                <div className="col-sm-6 htmlForm-group">
-                  <input
-                    className="htmlForm-control"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    type="email"
-                    required
-                  />
-                </div>
-              </div>
-              <textarea
-                className="htmlForm-control"
-                id="comments"
-                name="comments"
-                placeholder="Comment"
-                rows="5"
-              ></textarea>
-
-              <div className="row">
-                <div className="col-md-12 htmlForm-group">
-                  <button className="btn pull-right" type="submit">
-                    Send
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <h3 className="text-center">From The Blog</h3>
-          <ul className="nav nav-tabs">
-            <li className="active">
-              <a data-toggle="tab" href="#home">
-                Mike
-              </a>
-            </li>
-            <li>
-              <a data-toggle="tab" href="#menu1">
-                Chandler
-              </a>
-            </li>
-            <li>
-              <a data-toggle="tab" href="#menu2">
-                Peter
-              </a>
-            </li>
-          </ul>
-
-          <div className="tab-content">
-            <div id="home" className="tab-pane fade in active">
-              <h2>Mike Ross, Manager</h2>
-              <p>
-                Man, we've been on the road htmlFor some time now. Looking htmlForward
-                to lorem ipsum.
-              </p>
-            </div>
-            <div id="menu1" className="tab-pane fade">
-              <h2>Chandler Bing, Guitarist</h2>
-              <p>
-                Always a pleasure people! Hope you enjoyed it as much as I did.
-                Could I BE.. any more pleased?
-              </p>
-            </div>
-            <div id="menu2" className="tab-pane fade">
-              <h2>Peter Griffin, Bass player</h2>
-              <p>
-                I mean, sometimes I enjoy the show, but other times I enjoy
-                other things.
-              </p>
-            </div>
-          </div>
-        </div>
-         */}
       </main>
 
       <footer className="text-center">

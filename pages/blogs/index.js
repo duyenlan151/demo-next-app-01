@@ -32,7 +32,7 @@ export default function Blogs() {
   }, []); // empty array chi chay dung 1 lan, khong bi phu thuoc
 
   return (
-    <div className={styles.container} style={{ marginTop: '80px' }}>
+    <div className={styles.container} style={{ marginTop: '80px' }}>/
       <h2 className={styles.title}>Blogs List</h2>
       <Blog posts={postList}></Blog>
     </div>
