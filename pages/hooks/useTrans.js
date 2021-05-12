@@ -3,22 +3,16 @@ import { useCookies } from 'react-cookie';
 import en from '../../public/i18n/en'
 import vi from '../../public/i18n/vi'
 
-const keyLang = 'lang';
+const keyLang = 'NEXT_LOCALE';
 const useTrans = () => {
     let { locale } = useRouter();
     const [ cookie, setCookie ] = useCookies([keyLang]);
     console.log(locale);
 
     if(cookie[keyLang] !== locale){
-        // console.log('set cookie');
-        setCookie(keyLang, locale);
+        setCookie(keyLang, locale, { path: "/" });
     }
-    // else{
-    //     console.log('unset cookie');
-    // }
-    // const trans = cookie === 'vi' ? vi : en;
     const trans = cookie[keyLang] === 'en' ? en : vi;
-    // console.log(trans);
 
     return trans;
 }

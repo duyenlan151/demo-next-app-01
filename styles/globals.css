@@ -14,3 +14,12 @@ a {
 * {
   box-sizing: border-box;
 }
+
+
+.flex-column{
+  max-width: 26px;
+}
+
+.flex-column img{
+  margin: 5px;
+}
