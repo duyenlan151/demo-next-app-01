@@ -1,6 +1,6 @@
 import { NavLink } from "./NavLink";
 import { useRouter } from "next/router";
-import useTrans from '../../../pages/hooks/useTrans';
+import useTrans from '../../../lib/hooks/useTrans';
 
 function Nav(){
     const trans = useTrans();

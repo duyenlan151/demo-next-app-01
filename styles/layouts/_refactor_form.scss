@@ -1,0 +1,388 @@
+.refactor-form {
+    $screen__mobile: 576px;
+    @media screen and (max-width: $screen__mobile) {
+        .mat-horizontal-stepper-header {
+            padding: 24px 10px !important;
+        }
+        .mat-horizontal-content-container {
+            padding: 0 10px 24px 10px !important;
+        }
+        .mat-horizontal-stepper-header .mat-step-label {
+            display: none;
+            &.mat-step-label-selected {
+                display: inline-block;
+            }
+        }
+    }
+    .buttons button {
+        border-radius: 0.3rem;
+        width: fit-content;
+        padding: 0.5rem 1rem;
+    }
+    //radio button
+
+    mat-radio-button.mat-radio-button {
+        margin-right: 15px;
+        padding: 0;
+    }
+    .mat-radio-container {
+        //ẩn radio check
+        display: none;
+    }
+    .mat-radio-label-content {
+        padding: 0;
+        margin: 0;
+    }
+    mat-radio-button {
+        .mat-radio-label-content {
+            border: 2px solid transparent;
+            border-radius: 4px;
+            position: relative;
+        }
+        .label {
+            font-size: 100px;
+            background: $bg-color-light;
+            width: 100px;
+            height: 100px;
+            @media screen and (max-width: 576px) {
+                font-size: 60px;
+                width: calc(100vw / 4.6);
+                height: calc(100vw / 4.6);
+            }
+            .icon-investor {
+                width: 0.5em;
+                height: 0.5em;
+                display: block;
+                @include background(url("#{$assetPath}/img/icons/i-bid.svg"), contain, no-repeat);
+            }
+            .icon-investor-checked {
+                width: 0.5em;
+                height: 0.5em;
+                display: none;
+                @include background(url("#{$assetPath}/img/icons/i-bid-checked.svg"), contain, no-repeat);
+            }
+            .icon-house {
+                width: 0.5em;
+                height: 0.5em;
+                display: block;
+                @include background(url("#{$assetPath}/img/icons/i-house.svg"), contain, no-repeat);
+            }
+            .icon-banking {
+                width: 0.5em;
+                height: 0.5em;
+                display: block;
+                @include background(url("#{$assetPath}/img/icons/i-banking.svg"), contain, no-repeat);
+            }
+            .icon-banking-checked {
+                width: 0.5em;
+                height: 0.5em;
+                display: none;
+                @include background(url("#{$assetPath}/img/icons/i-banking-checked.svg"), contain, no-repeat);
+            }
+            .icon-host {
+                width: 0.5em;
+                height: 0.5em;
+                display: block;
+                @include background(url("#{$assetPath}/img/icons/i-host.svg"), contain, no-repeat);
+            }
+            .icon-host-checked {
+                width: 0.5em;
+                height: 0.5em;
+                display: none;
+                @include background(url("#{$assetPath}/img/icons/i-host-checked.svg"), contain, no-repeat);
+            }
+            .icon-house-checked {
+                width: 0.5em;
+                height: 0.5em;
+                display: none;
+                @include background(url("#{$assetPath}/img/icons/i-house-checked.svg"), contain, no-repeat);
+            }
+            .icon-apartment {
+                width: 0.5em;
+                height: 0.5em;
+                display: block;
+                @include background(url("#{$assetPath}/img/icons/i-apartment.svg"), contain, no-repeat);
+            }
+            .icon-apartment-checked {
+                width: 0.5em;
+                height: 0.5em;
+                display: none;
+                @include background(url("#{$assetPath}/img/icons/i-apartment-checked.svg"), contain, no-repeat);
+            }
+            .icon-land {
+                width: 0.5em;
+                height: 0.5em;
+                display: block;
+                @include background(url("#{$assetPath}/img/icons/i-land.svg"), contain, no-repeat);
+            }
+            .icon-land-checked {
+                width: 0.5em;
+                height: 0.5em;
+                display: none;
+                @include background(url("#{$assetPath}/img/icons/i-land-checked.svg"), contain, no-repeat);
+            }
+            .icon-bid {
+                width: 0.5em;
+                height: 0.5em;
+                display: block;
+                @include background(url("#{$assetPath}/img/icons/i-bid.svg"), contain, no-repeat);
+            }
+            .icon-bid-checked {
+                width: 0.5em;
+                height: 0.5em;
+                display: none;
+                @include background(url("#{$assetPath}/img/icons/i-bid-checked.svg"), contain, no-repeat);
+            }
+        }
+
+        &.mat-radio-checked {
+            .mat-radio-label-content {
+                border-color: $color-link;
+            }
+
+            .icon-house {
+                display: none;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-investor {
+                display: none;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-banking {
+                display: none;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-host {
+                display: none;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-investor-checked {
+                display: block;
+                left: 0;
+                top: 0;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-banking-checked {
+                display: block;
+                left: 0;
+                top: 0;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-host-checked {
+                display: block;
+                left: 0;
+                top: 0;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-house-checked {
+                display: block;
+                left: 0;
+                top: 0;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-apartment {
+                display: none;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-apartment-checked {
+                display: block;
+                left: 0;
+                top: 0;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-land {
+                display: none;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-land-checked {
+                display: block;
+                left: 0;
+                top: 0;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-bid {
+                display: none;
+                width: 0.5em;
+                height: 0.5em;
+            }
+            .icon-bid-checked {
+                display: block;
+                left: 0;
+                top: 0;
+                width: 0.5em;
+                height: 0.5em;
+            }
+        }
+    }
+
+    // mat input
+     .mat-form-field-suffix {
+        align-self: center;
+    }
+  .custom-input .mat-form-field-flex {
+    padding-bottom: 20px;
+  }
+    .custom-input .mat-form-field-suffix {
+        position: absolute;
+        top: 86%;
+        right: .5rem;
+    }
+    .rounded-circle {
+        min-width: 32px;
+        min-height: 32px;
+    }
+    .icon-tooltip {
+        cursor: pointer;
+        @include background(url("#{$assetPath}/img/icons/i-tooltip.svg"), contain, no-repeat);
+        width: 16px;
+        height: 16px;
+        &:hover {
+            @include background(url("#{$assetPath}/img/icons/i-tooltip-hover.svg"), contain, no-repeat);
+        }
+    }
+    .icon-done-all {
+        @include background(url("#{$assetPath}/img/icons/i-done-all.svg"), contain, no-repeat);
+        width: 24px;
+        height: 24px;
+    }
+    .dropzone.dropzone-previews {
+        padding: 0;
+        border: none;
+        height: 100%;
+        .dz-preview {
+            margin: 0;
+        }
+    }
+    #dz-previews-auc {
+        height: 150px;
+        overflow-x: auto;
+        @include custom-scroll-x;
+        .dz-error-message,
+        .dz-success-mark,
+        .dz-error-mark,
+        .dz-progress {
+            display: none !important;
+        }
+        .dz-preview.dz-image-preview {
+            position: relative;
+            margin-right: 20px;
+            border: 1px solid $color-gray-light;
+            .dz-remove {
+                z-index: 10;
+                text-decoration: none;
+                position: absolute;
+                min-width: 24px;
+                min-height: 24px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background-color: $color-primary;
+                top: -12px;
+                right: -12px;
+                span {
+                    color: $body-color-bg;
+                }
+            }
+            .dz-image {
+                border-radius: 4px;
+            }
+            .dz-image img{
+                height: 120px;
+                width: 120px;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+    .dropzone-previews.disable .dz-remove {
+        display: none!important;
+    }
+    @media screen and (max-width: $screen__mobile) {
+        .mat-checkbox-layout {
+            display: initial;
+        }
+    }
+    .select-text {
+        .mat-select-value-text {
+            text-transform: capitalize;
+        }
+    }
+
+    .icon-submit {
+        @include background(url("#{$assetPath}/img/icons/i-form.svg"), contain, no-repeat);
+            display: inline-block;
+            width: 27px;
+            height: 27px;
+            margin-right: 4px;
+    }
+    .icon-arrow-right {
+        @include background(url("#{$assetPath}/img/icons/i-arrow-right.svg"), contain, no-repeat);
+        display: inline-block;
+        width: 27px;
+        height: 27px;
+        margin-left: 4px;
+    }
+    .btn-later {
+        width: fit-content;
+        text-decoration: underline;
+        background: none;
+        padding: 8px 15px 8px 15px;
+        &:focus {
+            outline: none;
+            box-shadow: none;
+        }
+    }
+    .dropzone-field {
+        .mat-form-field-wrapper {
+            height: 0;
+        }
+        .mat-form-field-underline {
+            display: none;
+        }
+    }
+    .mat-form-field-disabled {
+        input,
+        textarea,
+        .mat-select-value {
+            color: $color-primary;
+        }
+    }
+}
+ngx-mat-datetime-content {
+    .mat-button.mat-primary,
+    .mat-stroked-button.mat-primary {
+        color: $color-primary;
+    }
+    .time-container {
+        .mat-button-ripple.mat-ripple.mat-button-ripple-round {
+            top: 5px;
+            bottom: -9px;
+        }
+    }
+    .actions {
+        button:disabled {
+            background: rgba(235, 235, 235, 0.5);
+        }
+    }
+    .mat-icon-button:disabled {
+        background: $color-white;
+    }
+}
+
+.mat-step-header .mat-step-icon, .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+    background-color: $color-link!important;
+    color: #fff!important;
+}

@@ -1,0 +1,11 @@
+.auction-popup {
+    button.btn-close {
+        width: 45px;
+        height: 45px;
+        @include font(28px, bold, $font-primary-bold, 34px, -0.33px);
+    }
+
+        .mat-dialog-content {
+            display: contents;
+    }
+}

@@ -1,0 +1,42 @@
+.mat-calendar {
+  max-height: 380px;
+    .mat-calendar-header.mat-calendar-type-datetime {
+      .mat-calendar-header-date {
+        .mat-calendar-control {
+          height: auto;
+          margin-top: 10px;
+        }
+      }
+    }
+    .mat-calendar-content {
+      .mat-calendar-main {
+        // height: calc(100% - 12vh) !important;
+        mat-clock-view {
+          margin: 0 25px;
+          padding-top: 15px;
+          height: 93%;
+        }
+      }
+    }
+    .mat-calendar-content.mat-calendar-view-month,
+    .mat-calendar-content.mat-calendar-view-year {
+      .mat-calendar-main {
+        height: calc(100% - 100px) !important;
+      }
+    }
+// clock
+    .mat-calendar-content.mat-calendar-view-clock {
+      .mat-clock {
+        margin-left: 0;
+        padding-right: 100%;
+      }
+    }
+    .mat-calendar-footer {
+      flex-wrap: nowrap;
+      button:focus {
+        outline: none;
+      }
+    }
+  }
+  
+

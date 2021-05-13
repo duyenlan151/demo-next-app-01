@@ -1,0 +1,71 @@
+.on-boarding {
+    // width: 25%;
+  .mat-dialog-content {
+    max-height: 77vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  swiper {
+    img {
+      max-width: 50%;
+      max-height: 30%;
+      margin: 5rem 0;
+    }
+    .swiper-button-prev, .swiper-button-next {
+      display: none;
+    }
+    .swiper-pagination-bullets {
+      .swiper-pagination-bullet {
+        border: none!important;
+        width: 10px;
+        height: 10px;
+        &.swiper-pagination-bullet-active {
+          background-color: $color-yellow;
+
+        }
+      }
+      width: 100%;
+    }
+  }
+    @media screen and (max-width: 768px) {
+        max-width: 100% !important;
+        width: 100% !important;
+        position: absolute !important;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        left: 0;
+    }
+    .on-boarding__actions-button {
+      width: 100%;
+      border-radius: 4px;
+    }
+    .dialog__link{
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+    }
+    &__close {
+        appearance: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+    }
+    & .mat-dialog-container {
+        border-radius: 0;
+    }
+    &__header {
+        margin-top: 50px;
+    }
+    &__actions {
+        margin-top: 20px;
+        &-close {
+            margin-top: 10px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+}

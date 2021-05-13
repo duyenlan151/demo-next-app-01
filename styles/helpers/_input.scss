@@ -1,0 +1,136 @@
+@import "border";
+
+input {
+  border: none;
+  @include border(bottom);
+  &.bg-trans {
+    background: transparent;
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.form-control {
+  position: relative;
+  label {
+    user-select: none;
+  }
+  input {
+    width: 100%;
+    height: 42px;
+    transition: $transition-all;
+    &:focus, &:active {
+      border-color: $color-primary;
+      & ~ label {
+        // If label behavior needed
+      }
+    }
+  }
+}
+
+.auth-form {
+  background: $grey;
+}
+
+@mixin form-field-group {
+
+}
+@mixin form-field-control {
+
+}
+
+.mat-focused .mat-form-field-outline-thick {
+  color: $bg-color-primary !important;
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background, 
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+  background-color: $bg-color-primary;
+}
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element, 
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+  background: $bg-color-primary;
+}
+
+.mat-radio-checked.mat-accent .mat-radio-outer-circle {
+  border-color: $bg-color-primary !important;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle, 
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), 
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, 
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+  background-color: $bg-color-primary !important;
+}
+
+.mat-slide-toggle {
+  .mat-slide-toggle-bar {
+    background: rgba(118, 118, 119, 0.1);
+  }
+  .mat-slide-toggle-thumb {
+    background-color: $color-gray;
+  }
+}
+.mat-slide-toggle.mat-checked {
+  .mat-slide-toggle-bar {
+    background: rgba(118, 118, 119, 0.1);
+  }
+  .mat-slide-toggle-thumb, .mat-ripple-element {
+    background-color: $color-success;
+  }
+}
+
+.filter-control {
+  &__select {
+    font-size: 14px;
+    .mat-form-field-wrapper {
+      margin: 0;
+      padding: 0;
+      line-height: 1.5em;
+    }
+    .mat-form-field-infix {
+      border-top: .34375em solid transparent;
+    }
+    .mat-select-arrow-wrapper {
+      transform: translateY(0%) !important;
+    }
+    .mat-form-field-infix {
+      padding: .8em 0 .8em 0;
+      @media screen and (max-width: 767px) {
+        padding: .4em 0 .4em 0;
+      }
+    }
+    .mat-icon-button .mat-icon {
+      height: 30px;
+    }
+  }
+}
+.mat-form-field-label-wrapper {
+    top: -1rem;
+    .mat-form-field-label {
+      line-height: 1.5rem;
+      mat-label {
+        font-size: 1rem;
+        color: $color-gray;
+      }
+    }
+}
+mat-form-field {
+  .mat-form-field-infix {
+    padding: 0.8em 0 0.8em 0.5em!important;
+    input.mat-input-element {
+      line-height: 20px;
+    }
+  }
+}
+.mat-form-field {
+  // line-height: 1.425!important;
+}

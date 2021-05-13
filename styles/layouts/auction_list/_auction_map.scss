@@ -1,0 +1,290 @@
+.auction__map {
+  position: relative;
+  background-color: $bg-color-light;
+  overflow: hidden;
+  width: 100%;
+  @include screen('(min-width: 1025px) and (max-width: 1366px)') {
+    width: 42%;
+  }
+  @include screen('(min-width: 1367px)') {
+    width: 50%;
+  }
+  // Behavior util classes
+    // Init when detect:
+    .visible-map {
+      display: block;
+      opacity: 0;
+      visibility: hidden;
+    }
+    // Show when toggle:
+    .show-map {
+      opacity: 1;
+      visibility: visible;
+      z-index: 30;
+    }
+    //Map fixed from 768 to 1024
+    .map-fix {
+      position: static;
+      width: 100%;
+      right: 0;
+      left: 0;
+      top: $toolbar-height + $filter-box;
+      height: 300px;
+      transition: position .3s ease;
+      z-index: 30;
+    }
+    .map-fix-scroll {
+      position: fixed;
+      height: 30%;
+      transition: position .3s ease;
+    }
+    //Map fixed >1024
+    .map-fix--desk {
+      position: fixed;
+      z-index: 30;
+      top: $toolbar-height + $top-bar-height + $filter-box;
+      bottom: 10px;
+      right: 0;
+      left: 58%;
+      width: 42%;
+      height: auto;
+      @include screen('(min-width: 1367px)') {
+        width: 50%;
+        left: 50%;
+      }
+    }
+    .map-fix--desk-scroll {
+      position: fixed;
+      top: $toolbar-height + 50px;
+      bottom: 10px;
+      right: 0;
+      left: 58%;
+      width: 42%;
+      @include screen('(min-width: 1367px)') {
+        width: 50%;
+        left: 50%;
+      }
+    } 
+    .map-fix--desk-bottom {
+      position: absolute;
+      top: auto ;
+      bottom: 1rem;
+      left: 0;
+      right: 0;
+      height: 1000px;
+      width: 100%;
+      @include screen('(min-width: 1366px)') {
+        width: 100%;
+        left: 0;
+      }
+    }
+    // .map-fix--desk-bottom {
+    //   top: $toolbar-height ;
+    //   bottom: 210px;
+    // }
+    .map-fix--desk-top {
+      top: $toolbar-height + $top-bar-height;
+    }
+    .map-mobile {
+      position: static;
+      width: 100%;
+      height: calc(100vh - 302px);
+    }
+  // ------End behavior util classes
+  // .map__wrapper {
+  //   position: fixed;
+  //   z-index: 999;
+  //   width: 50%;
+  //   right: 0;
+  //   height: 600px;
+  //   bottom: auto;
+  //   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  // }
+
+
+  agm-map {
+    width: 100%;
+    height: 100%;
+    .gm-style-iw, .gm-style-iw-t:after {
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+}
+
+.card-map {
+  flex-direction: row;
+  border: none;
+  max-width: 500px;
+
+  .card-header {
+    width: 40%;
+    padding: 0;
+    border-radius: .25rem;
+    overflow: hidden;
+    .img-store {
+      overflow: hidden;
+      position: relative;
+      width: 200px;
+      height: 110px;
+
+    }
+    .card-map__btn {
+      height: 24px;
+      @include flex-center;
+      border-radius: 0 0 .25rem .25rem;
+    }
+    img {
+      cursor: pointer;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1);
+      // transition: transform 1s ease;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+    .card-img:first-child {
+      visibility: visible;
+      opacity: 1;
+      // transform: rotateY(0deg);
+    }
+    .card-img:last-child {
+      visibility: hidden;
+      opacity: 0;
+      // transform: rotateY(90deg);
+    }
+    &:hover {
+      cursor: pointer;
+      .card-img:first-child {
+        transition: all .3s ease-in-out;
+        // transform: rotateY(90deg);
+        visibility: hidden;
+        opacity: 0;
+      }
+      .card-img:last-child {
+        transition: all .3s ease-in-out;
+        // transition-delay: .2s;
+        visibility: visible;
+        opacity: 1;
+        // transform: rotateY(0deg);
+      }
+    }
+  }
+
+  .card-body {
+    width: 60%;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    .card-title {
+      @include font-body(bold);
+      margin-bottom: .5rem;
+      cursor: pointer;
+      /* autoprefixer: ignore next */
+      -webkit-box-orient: vertical;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      max-height: calc(34px * 2);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+
+      @include screen('(min-width: 992px)') {
+        max-height: calc(34px * 2);
+      }
+
+      @include screen('(max-width: 991px)') {
+        max-height: calc(28px * 2);
+      }
+
+      &:hover {
+        color: $color-link
+      }
+    }
+
+    &__item {
+      margin-top: 6px;
+    }
+
+    &__bottom {
+      margin-top: 12px;
+      &-btn {
+        @include font-body-tiny(bold);
+        //@include flex-center;
+        background: $bg-color-second;
+        color: $color-blue;
+        //width: 110px;
+        height: 24px;
+        border-radius: 30px;
+        padding: 5px 10px;
+      }
+    }
+
+    &__information {
+      display: flex;
+      align-items: center;
+
+      .item-line {
+        display: table;
+
+        &__icon {
+          width: 24px;
+          height: 24px;
+        }
+
+        &__text {
+          display: table-cell;
+          vertical-align: middle;
+        }
+
+        &:last-child {
+          .item-line__icon {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+
+    }
+
+    .card__text {
+      .card-text__icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+        text-indent: -9999px;
+        float: left;
+      }
+
+      .card-text__text {
+        @include font-body();
+        /* autoprefixer: ignore next */
+        -webkit-box-orient: vertical;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        max-height: calc(28px * 2);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        text-overflow: ellipsis;
+
+        @include screen('(min-width: 992px)') {
+          max-height: calc(28px * 2);
+        }
+
+        @include screen('(max-width: 991px)') {
+          max-height: calc(24px * 2);
+        }
+
+        @include screen('(max-width: 767px)') {
+          max-height: calc(21px * 2);
+        }
+      }
+    }
+  }
+}

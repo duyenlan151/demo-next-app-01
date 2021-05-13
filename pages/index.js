@@ -4,12 +4,11 @@ import axios from 'axios';
 import { useState, useEffect } from "react";
 import styles from "../styles/Home.module.css";
 import Link from 'next/link';
-import useTrans from './hooks/useTrans'
 import { useRouter } from "next/router"
 
 export default function Home() {
   const [myBanner, setMyBanner] = useState([]);
-  const trans = useTrans();
+  // const trans = useTrans();
   const router = useRouter()
 
   useEffect(() => {
@@ -28,9 +27,6 @@ export default function Home() {
     console.log(myBanner);
   }, []);// empty array chi chay dung 1 lan, khong bi phu thuoc 
 
-  const changeLang = (lang) => {
-    router.push('/', '/', { locale: lang });
-  }
 
   return (
     <div className={styles.container}>

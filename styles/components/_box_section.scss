@@ -1,0 +1,97 @@
+.box-section {
+  margin-bottom: 1rem;
+  overflow: hidden;
+  .box-section__title {
+    @include font-body(bold);
+    margin: 0;
+  }
+  .box-section-content {
+    margin-top: 1.2rem;
+    @media screen and (max-width: 1024px) {
+      margin-top: .6rem;
+      &:nth-child(3){
+        margin-top: 0.3rem;
+      }
+    }
+  }
+}
+// Contact Information
+.contact-information {
+  .icon {
+    font-size: 20px;
+    margin-right: .4rem; 
+  }
+  p {
+    display: flex;
+    align-items: center;
+    &:first-child{
+      .icon{
+        display: none;
+      }
+    }
+  }
+}
+
+// Email Subscription
+.email-subscribe {
+  border-bottom: 1px solid rgba($color-gray-light, .2);
+  padding-bottom: 1rem;
+  .row{
+    align-items: center;
+  }
+  &__desc {
+    // margin-top: -1rem;
+    h3 {
+      @include font-title-mid;
+      margin-bottom: 0;
+    }
+    p {
+      margin-bottom: 0;
+      @include font-body();
+    }
+  }
+  &__form {
+    @include flex-center;
+    flex-wrap: wrap;
+    .form-field-group {
+      flex: 1;
+      margin-right: 20px;
+      @media screen and (max-width: $breakpoint-md) {
+        margin-right: 0px;
+      }
+      .mat-form-field-wrapper {
+        margin-bottom: 0;
+        .mat-form-field-flex {
+          .mat-form-field-outline {
+            background-color: $color-white;
+            border-radius: 5px;
+          }
+        }
+        input {
+          color: $color-primary;
+        }
+      }
+      &.mat-form-field-should-float {
+        .mat-form-field-label {
+          transform: translateY(-0.89375em) scale(0.75) !important;
+        }
+      }
+      &.mat-focused {
+        .mat-form-field-outline-thick {
+          color: $color-white !important;
+        }
+      }
+    }
+  }
+  &__button {
+    width: auto;
+    height: 50px;
+    margin-bottom: 14px;
+    margin-left: 5px;
+    padding: 0 15px;
+    background-color: #E39A00 !important;
+    &:focus {
+      outline: none;
+    }
+  }
+}

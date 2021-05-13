@@ -1,0 +1,148 @@
+app-auction-post-item {
+    width: 100%;
+}
+.auction-post-item {
+    height: auto !important;
+    width: 100%;
+    padding: 10px 0;
+    @media screen and (max-width: $breakpoint-md) {
+        margin-top: 1rem;
+    }
+    &__row {
+        width: 100%;
+        box-shadow: none;
+        @media screen and (max-width: $breakpoint-md) {
+            box-shadow: 2px 2px 1px 2px rgba($color: #000000, $alpha: .08),
+            -2px -2px 1px rgba($color: #000000, $alpha: .03)
+            ;
+        }
+    }
+    &__wrap {
+        display: flex;
+        width: 100%;
+        position: relative;
+        @media screen and (max-width: $breakpoint-md) {
+            display: block;
+        }
+    }
+    &__thumb {
+        flex:0 0 30%;
+        min-width: 30%;
+        margin-right: 10px;
+        @media screen and (max-width: $breakpoint-md) {
+            width: 100%;
+        }
+          &-img {
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+    }
+    &__address {
+        flex:0 0 70%;
+        min-width: 70%;
+        position: static;
+        color: $body-color-text;
+        @media screen and (max-width: $breakpoint-md) {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            color: $color-white;
+        }
+    }
+    &__text {
+        font-size: 14px;
+        &-icon {
+            cursor: pointer;
+            margin-top: -5px;
+            font-weight: bold;
+        }
+    }
+    &__heading {
+        font-size: 16px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    &__action {
+        &-btn {
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}
+
+.auction-post-item-card-wrapper {
+    margin-bottom: 16px;
+    width: 100%;
+    .auction-post-item-card {
+        &__image {
+            position: relative;
+        }
+        &__overlay {
+            content: "";
+            position: absolute;
+            width: calc(100% + 32px);
+            height: 100%;
+            top: -16px;
+            left: -16px;
+            z-index: 1;
+            background-color: rgba($color: #000000, $alpha: .08);
+        }
+        &__float {
+            position: absolute;
+            bottom: 20px;
+            display: block;
+            color: #fff;
+            z-index: 2;
+            &-content {
+                float: left;
+                text-align: center;
+                font-size: 14px;
+                line-height: 18px;
+                margin-right: 10px;
+                border-right: 1px solid rgba(224, 227, 228, 0.33);
+                padding-right: 6px;
+                margin-right: 6px;
+                p {
+                    margin-bottom: 0;
+                }
+                &:last-child {
+                    text-align: left;
+                    border: none;
+                    h6 {
+                        text-transform: uppercase;
+                        font-size: 14px;
+                        line-height: 18px;
+                        margin-bottom:0;
+                    }
+                    p, h6 {
+                        max-width: 100px;
+                        white-space: nowrap;
+                        overflow: hidden !important;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+    .mat-card-actions, .mat-card-content, .mat-card-subtitle {
+            margin-bottom: 0;
+    }
+}
+
+app-auction-post-title {
+    width: 100%;
+}
+
+.auctions-posted-title {
+    border-bottom: 4px solid $color-gray;
+    width: 100%;
+    &__row {
+        width: 100%;
+    }
+    h5 {
+        font-size: 16px;
+    }
+}

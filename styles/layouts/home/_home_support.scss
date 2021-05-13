@@ -1,0 +1,45 @@
+.home-support {
+  position: fixed;
+  display: none;
+  bottom: 50px;
+  right: 30px;
+  z-index: 20;
+  &__icon {
+      width: 90px;
+      height: 90px;
+      background-image: url(assets/icons/home-slider-support-icon.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+  &__tooltip {
+      position: absolute;
+      top: 50%;
+      left: -10px;
+      width: max-content;
+      padding: 6px 8px;
+      transform: translate(-100%,-50%);
+      border-radius: 2px;
+      background-color: $color-white;
+      box-shadow: 2px 2px 2px rgba($color: #000000, $alpha: .08);
+      .support-tooltip__link {
+          color: $body-color-text;
+          font-weight: bold;
+          white-space: nowrap;
+          @include font(22px);
+          &:hover {
+              text-decoration: none;
+              color: #1E88F5;
+          }
+      }
+      &::after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translate(80%,-50%);
+          border: 10px solid;
+          border-color: transparent transparent transparent $color-white;
+      }
+  }
+}

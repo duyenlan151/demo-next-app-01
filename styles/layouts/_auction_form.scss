@@ -1,0 +1,732 @@
+.app-auction-form {
+  //style text
+  .text-hidden {
+    display: none;
+  }
+
+  //end style text
+  //heading của form 1.1 1.2 ...
+  .heading {
+    border-bottom: 1px solid rgba(11, 22, 43, 0.5);
+    padding-bottom: 9px;
+
+    &__icon {
+      height: 32px;
+      width: 32px;
+      min-width: 32px;
+      background-color: black;
+      color: #ffffff;
+      border-radius: 50%;
+      line-height: 32px;
+    }
+  }
+
+  //end heading của form 1.1 1.2 ...
+  //style form field
+  mat-form-field.validate-dropzone-file {
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+
+    .mat-form-field-underline {
+      background-color: transparent;
+    }
+  }
+
+  mat-form-field {
+    .mat-form-field-flex {
+      align-items: center;
+
+      .textarea-hint {
+        align-self: unset;
+      }
+    }
+  }
+
+  mat-form-field.textarea {
+    .mat-form-field-flex {
+      align-items: unset;
+
+      .textarea-hint {
+        position: absolute;
+        bottom: 13px;
+        right: 15px;
+      }
+    }
+  }
+
+  .textarea-wapper {
+    .mat-form-field-infix {
+      padding-bottom: 2em;
+    }
+  }
+
+  .mat-form-field-disabled:not(.disabled-email) {
+    input,
+    textarea,
+    .mat-select-value {
+      color: #000;
+    }
+  }
+
+  //end style form field
+
+  // STYLE BUTTON
+  .btn {
+    width: fit-content;
+    border-radius: 4px;
+    margin-left: 7px;
+  }
+
+  .btn-submit {
+    background-color: #1e88f5;
+    color: #ffffff !important;
+
+    .icon {
+      @include background(url("#{$assetPath}/img/icons/i-form.svg"), contain, no-repeat);
+      display: inline-block;
+      width: 27px;
+      height: 27px;
+      margin-right: 4px;
+    }
+  }
+
+  .icon-arrow-right {
+    @include background(url("#{$assetPath}/img/icons/i-arrow-right.svg"), contain, no-repeat);
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    margin-left: 4px;
+  }
+
+  .btn-comeback,
+  .btn-approve {
+    text-decoration: underline;
+    padding: 8px 15px;
+  }
+
+  .btn-later {
+    text-decoration: underline;
+    background: none;
+    padding: 8px 0 8px 15px;
+
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  .btn-approve {
+    background-color: $bg-color-success;
+    color: $color-success;
+    margin-left: 10px;
+    @media screen and (max-width: 576px) {
+      width: 100%;
+      margin-left: 0px;
+      margin-top: 10px;
+      .mat-button-wrapper {
+        justify-content: center;
+      }
+    }
+  }
+
+  .button-groups {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+
+  // END STYLE BUTTON
+  //mat-select
+  .select-custom {
+    .mat-select-value-text {
+      text-transform: capitalize;
+    }
+  }
+
+  // tooltip
+  .icon-tooltip {
+    cursor: pointer;
+    @include background(url("#{$assetPath}/img/icons/i-tooltip.svg"), contain, no-repeat);
+    width: 16px;
+    height: 16px;
+
+    &:hover {
+      @include background(url("#{$assetPath}/img/icons/i-tooltip-hover.svg"), contain, no-repeat);
+    }
+  }
+
+  .custom-tooltip {
+    top: 25%;
+  }
+
+  // style stepper label
+  .mat-step-label-selected {
+    .mat-step-sub-label {
+      display: inline-block;
+    }
+  }
+
+  .mat-step-header .mat-step-icon-selected,
+  .mat-step-header .mat-step-icon-state-done,
+  .mat-step-header .mat-step-icon-state-edit {
+    background-color: $color-link;
+    color: #fff;
+  }
+
+  .mat-vertical-content-container.mat-stepper-vertical-line,
+  .mat-vertical-content-container {
+    margin-left: 0 !important;
+  }
+
+  .mat-vertical-content-container.mat-stepper-vertical-line::before {
+    content: unset;
+  }
+
+  .mat-vertical-stepper-header {
+    padding: 24px 24px 24px 0px;
+    margin-left: 0px;
+  }
+
+  .mat-button-wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  .mat-step-header .mat-step-icon-selected {
+    background-color: $color-link;
+  }
+
+  .mat-step-icon-state-done.mat-step-icon {
+    background-color: $color-link;
+  }
+
+  //style angular material
+
+  // end style angular material
+  .dropzone-info {
+    .icon-done-all {
+      @include background(url("#{$assetPath}/img/icons/i-done-all.svg"), contain, no-repeat);
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  //radio button
+
+  mat-radio-button.mat-radio-button {
+    margin-right: 15px;
+    padding: 0;
+  }
+
+  .mat-radio-container {
+    //ẩn radio check
+    display: none;
+  }
+
+  .mat-radio-label-content {
+    padding: 0;
+    margin: 0;
+  }
+
+  mat-radio-button {
+    .mat-radio-label-content {
+      border: 2px solid transparent;
+      border-radius: 4px;
+      position: relative;
+    }
+
+    .label {
+      font-size: 100px;
+      background: $bg-color-light;
+      width: 100px;
+      height: 100px;
+      @media screen and (max-width: 576px) {
+        font-size: 60px;
+        width: 80px;
+        height: 80px;
+      }
+
+      .icon-investor {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-bid.svg"), contain, no-repeat);
+      }
+
+      .icon-investor-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-bid-checked.svg"), contain, no-repeat);
+      }
+
+      .icon-house {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-house.svg"), contain, no-repeat);
+      }
+
+      .icon-banking {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-banking.svg"), contain, no-repeat);
+      }
+
+      .icon-atm-card {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-atm-card.svg"), contain, no-repeat);
+        background-position: center;
+      }
+      .icon-atm-card-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-atm-card-checked.svg"), contain, no-repeat);
+      }
+
+      .icon-visa {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-visa.svg"), contain, no-repeat);
+        background-position: center;
+      }
+      .icon-visa-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-visa-checked.svg"), contain, no-repeat);
+        background-position: center;
+      }
+      .icon-qrcode {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-qrcode.svg"), contain, no-repeat);
+        background-position: center;
+      }
+      .icon-qrcode-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-qrcode-checked.svg"), contain, no-repeat);
+        background-position: center;
+      }
+      .icon-vnpay {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-vnpay.svg"), contain, no-repeat);
+        background-position: center;
+      }
+      .icon-vnpay-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-vnpay-checked.svg"), contain, no-repeat);
+        background-position: center;
+      }
+      .icon-banking-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-banking-checked.svg"), contain, no-repeat);
+      }
+
+      .icon-host {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-host.svg"), contain, no-repeat);
+      }
+
+      .icon-host-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-host-checked.svg"), contain, no-repeat);
+      }
+
+      .icon-house-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-house-checked.svg"), contain, no-repeat);
+      }
+
+      .icon-apartment {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-apartment.svg"), contain, no-repeat);
+      }
+
+      .icon-apartment-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-apartment-checked.svg"), contain, no-repeat);
+      }
+
+      .icon-land {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-land.svg"), contain, no-repeat);
+      }
+
+      .icon-land-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-land-checked.svg"), contain, no-repeat);
+      }
+
+      .icon-bid {
+        width: 0.5em;
+        height: 0.5em;
+        display: block;
+        @include background(url("#{$assetPath}/img/icons/i-bid.svg"), contain, no-repeat);
+      }
+
+      .icon-bid-checked {
+        width: 0.5em;
+        height: 0.5em;
+        display: none;
+        @include background(url("#{$assetPath}/img/icons/i-bid-checked.svg"), contain, no-repeat);
+      }
+    }
+
+    &.mat-radio-checked {
+      .mat-radio-label-content {
+        border-color: $color-link;
+      }
+
+      .icon-house {
+        display: none;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-investor {
+        display: none;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-banking {
+        display: none;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-host {
+        display: none;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-investor-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-banking-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-host-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-house-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+      .icon-atm-card-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+      .icon-atm-card {
+        display: none;
+      }
+      .icon-qrcode {
+        display: none;
+      }
+      .icon-qrcode-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+      .icon-vnpay {
+        display: none;
+      }
+      .icon-vnpay-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+      .icon-visa {
+        display: none;
+      }
+      .icon-visa-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+      .icon-apartment {
+        display: none;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-apartment-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-land {
+        display: none;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-land-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-bid {
+        display: none;
+        width: 0.5em;
+        height: 0.5em;
+      }
+
+      .icon-bid-checked {
+        display: block;
+        left: 0;
+        top: 0;
+        width: 0.5em;
+        height: 0.5em;
+      }
+    }
+  }
+}
+
+
+dropzone {
+  // ẩn dropzone trong chế độ review
+  &.disabled {
+    .dz-wrapper {
+      display: none;
+    }
+  }
+
+  .dz-wrapper.dropzone .dz-message {
+    height: 100%;
+    width: 100%;
+
+    .icon-add-image {
+      @include background(url("#{$assetPath}/img/icons/i-add-image.svg"), contain, no-repeat);
+      width: 80px;
+      height: 80px;
+    }
+  }
+
+  .dropzone.dz-wrapper {
+    overflow: unset !important;
+    height: 213px;
+
+    .dz-message {
+      margin: 8px 0 !important;
+      min-width: 100% !important;
+      background-color: $body-color-bg !important;
+      border-radius: 4px;
+      border: 2px dashed $color-link !important;
+      // .hidden {
+      //     display: none !important;
+      // }
+    }
+  }
+
+  #dropzone-preview-files,
+  #dropzone-preview-legal,
+  .dropzone-previews-custom {
+    overflow-y: auto;
+    @include custom-scroll-x;
+    max-width: 100%;
+    height: 77%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 2em;
+    left: 0;
+  }
+
+  .dz-preview {
+    background: transparent;
+
+    .dz-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .dz-remove {
+      position: absolute;
+      top: -1em;
+      font-size: 1em;
+      right: -0.5em;
+      color: white;
+      background: black;
+      border-radius: 100%;
+      width: 24px;
+      height: 24px;
+      z-index: 10;
+      line-height: 24px;
+      text-align: center;
+
+      span {
+        cursor: pointer;
+      }
+    }
+
+    .dz-progress {
+      display: none;
+    }
+  }
+}
+
+.auc__post__dropzone {
+  &_previews {
+    .disabled-dropzone {
+      a.dz-remove {
+        display: none !important;
+      }
+    }
+
+    max-width: calc(100% - 33.333333%);
+    float: left;
+    padding: 0 !important;
+    border: 0 !important;
+
+    .dropzone-previews {
+      @include custom-scroll-x;
+
+      @media screen and (max-width: 576px) {
+        padding: 0 !important;
+      }
+      width: 100%;
+      float: left;
+      display: inline-flex;
+      overflow-x: auto;
+      padding: 30px 30px 30px 0;
+
+      .dz-preview {
+
+        .dz-remove {
+          position: absolute;
+          top: -7px;
+          right: -7px;
+          font-size: 1em;
+          color: white;
+          background: black;
+          border-radius: 50%;
+          width: 24px;
+          z-index: 20;
+
+          span {
+            cursor: pointer;
+          }
+        }
+
+        .dz-progress {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &_upload {
+    // width: 33.333333%;
+    width: 100%;
+    float: left;
+  }
+
+  .col-md-12 {
+    .auc__post__dropzone_upload {
+      width: 33.333333%;
+    }
+  }
+
+  @media screen and (max-width: 992px) {
+    &_previews {
+      max-width: 100%;
+    }
+    .col-md-12 {
+      .auc__post__dropzone_upload {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.suggest-price {
+  position: absolute;
+  top: 100%;
+  left: -8px;
+  background: #fff;
+  padding: .6rem;
+  border: 1px solid #ccc;
+  list-style: none;
+  margin: 0;
+  z-index: 1;
+  right: -43px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px gray;
+
+  li {
+    padding: .5rem 0;
+    border-bottom: 1px solid #f5f5f5;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-link;
+    }
+  }
+}

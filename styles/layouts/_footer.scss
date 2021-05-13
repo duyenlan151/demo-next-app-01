@@ -1,0 +1,99 @@
+app-footer {
+  background-color: $color-link;
+  color: $color-white;
+  padding: 0.5rem 1rem;
+  @include screen(mobile) {
+    padding: 0;
+  }
+  @include font-body();
+  a {
+    color: $white;
+    &.active {
+      color: #e39a00;
+    }
+    &:hover {
+      color: #e39a00!important;
+      text-decoration: none;
+    }
+    @media screen and (max-width: 1024px) {
+      &:first-child{
+        margin-right: 0.5rem;
+      }
+    }
+    @media screen and (max-width: 480px) {
+      &:nth-child(2){
+        margin-top: 0.3rem;
+        display: inline-block;
+      }
+    }
+  }
+  .icon-arrow {
+    cursor: pointer;
+  }
+
+  p,
+  li {
+    padding-bottom: 0.5rem;
+  }
+  .footer {
+    &__body {
+      .footer-inner {
+        @media screen and (max-width: $breakpoint-md - 1) {
+          border-bottom: 1px solid $color-gray-light;
+        }
+        &__menu {
+          margin: 0;
+          padding: 0 0 0.5rem 0;
+          list-style: none;
+          .footer-inner__item {
+            padding-left: 0;
+            @media screen and (max-width: 576px) {
+              padding-left: 1rem;
+            }
+          }
+        }
+      }
+    }
+    &-copyright {
+      border-top: 1px solid rgba($color-gray-light, 0.2);
+      padding: 10px 0;
+      @include font-body();
+      .content {
+        display: flex;
+        justify-content: space-between;
+        @media screen and (max-width: $breakpoint-md - 1) {
+          justify-content: center;
+          flex-wrap: wrap;
+          .footer-copyright__left {
+            margin-bottom: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+.icons-area {
+  @include screen('mobile') {
+    justify-content: center;
+  }
+  .social-icons {
+    display: flex;
+    justify-content: flex-end;
+    .icon {
+      display: inline-block;
+      vertical-align: middle;
+      width: 42px;
+      height: 42px;
+      margin-right: 0.4rem;
+      cursor: pointer;
+    }
+  }
+  .app-store {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+    a {
+      margin-left: 10px;
+    }
+  }
+}

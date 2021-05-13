@@ -1,0 +1,233 @@
+$cols: 24;
+// @MIXIN
+@mixin order($order) {
+  order: $order;
+}
+
+@for $i from 0 to $cols {
+  .o-#{$i} {
+    @include order($i);
+  }
+}
+@mixin z-index($z) {
+  z-index: $z;
+}
+
+@for $i from 0 to $cols {
+  .o-#{$i} {
+    @include order($i);
+  }
+  .z-#{$i} {
+    @include z-index($i);
+  }
+}
+
+@mixin position-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin screen($size) {
+  $desktop: '(min-width: 1200px)';
+  $under-xl: '(max-width: 1199px)';
+  $small-tablet: '(min-width: 768px) and (max-width: 992px)';
+  $tablet: '(min-width: 768px) and (max-width: 1199px)';
+  $mobile: '(max-width: 767px)';
+
+  @if ($size == desktop) {
+    @media screen and #{$desktop} {
+      @content;
+    }
+  } @else if($size == tablet) {
+    @media screen and #{$tablet} {
+      @content;
+    }
+  } @else if($size == smallTablet) {
+    @media screen and #{$small-tablet} {
+      @content;
+    }
+  } @else if($size == underXL) {
+    @media screen and #{$under-xl} {
+      @content;
+    }
+  } @else if($size == mobile) {
+    @media screen and #{$mobile} {
+      @content;
+    }
+  } @else {
+    @media screen and #{$size} {
+      @content;
+    }
+  }
+}
+// DISPLAYS
+
+.d-b {
+  display: block;
+}
+
+.d-i-b {
+  display: inline-block;
+}
+
+.d-f {
+  display: flex;
+}
+
+.d-i-f {
+  display: inline-flex;
+}
+
+// FLEX
+
+.f-a {
+  flex: auto;
+}
+
+// FLEX DIRECTIONS
+
+.f-d {
+  flex-direction: row;
+}
+
+.f-d-r {
+  flex-direction: row-reverse;
+}
+
+.f-d-c {
+  flex-direction: column;
+}
+
+.f-d-c-r {
+  flex-direction: column-reverse;
+}
+
+.f-g {
+  flex-grow: 1;
+}
+
+// JUSTIFY-CONTENTS
+
+.j-c-c {
+  justify-content: center;
+}
+
+.j-c-s-b {
+  justify-content: space-between;
+}
+
+.j-c-s-a {
+  justify-content: space-around;
+}
+
+.j-c-f-e {
+  justify-content: flex-end;
+}
+
+.j-c-f-s {
+  justify-content: flex-start;
+}
+
+.a-i-c {
+  align-items: center;
+}
+
+.a-i-e {
+  align-items: flex-end;
+}
+
+.a-i-s {
+  align-items: flex-start;
+}
+
+.a-i-stretch {
+  align-items: stretch;
+}
+
+// POSITION
+.p-r {
+  position: relative;
+}
+.p-a {
+  position: absolute;
+}
+.p-f {
+  position: fixed;
+}
+.p-i {
+  position: inherit;
+}
+.h-0 {
+  height: 0;
+}
+@media screen and (min-width: $breakpoint-xxl + 1) {
+  @for $i from 0 to 12 {
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+    }
+    .col-xxl-#{$i} {
+      padding-right: 15px;
+      padding-left: 15px;
+      flex: 0 0 100%/12 * $i;
+      max-width: 100%/12 * $i;
+    }
+  }
+}
+.d-none-1440 {
+  display: block !important;
+  @media screen and (max-width: 1440px) {
+    display: none !important;
+  }
+}
+.d-block-1440 {
+  display: none !important;
+  @media screen and (max-width: 1440px) {
+    display: block !important;
+  }
+}
+.d-none-1600 {
+  display: block !important;
+  @media screen and (max-width: 1600px) {
+    display: none !important;
+  }
+}
+.d-block-1600 {
+  display: none !important;
+  @media screen and (max-width: 1600px) {
+    display: block !important;
+  }
+}
+.d-none-1280 {
+  display: block !important;
+  @media screen and (max-width: 1280px) {
+    display: none !important;
+  }
+}
+.d-block-1280 {
+  display: none !important;
+  @media screen and (max-width: 1280px) {
+    display: block !important;
+  }
+}
+.dynamic-popover-panel {
+  background-color: transparent;
+  pointer-events: none;
+}
+.fixed-popover {
+  .cdk-overlay-backdrop.cdk-overlay-transparent-backdrop.cdk-overlay-backdrop-showing {
+    pointer-events: none;
+  }
+}
+app-root {
+  display: block;
+}

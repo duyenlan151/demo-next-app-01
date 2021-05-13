@@ -1,0 +1,440 @@
+
+// .icon-location {
+//   @include background(url('#{$assetPath}/img/icons/i-location.svg'), contain, no-repeat);
+// }
+// .icon-bid {
+//   @include background(url('#{$assetPath}/img/icons/i-bid-auction.svg'), contain, no-repeat);
+// }
+// .icon-bid-white {
+//   @include background(url('#{$assetPath}/img/icons/i-bid-auction-white.svg'), contain, no-repeat);
+// }
+// .icon-bid-circle {
+//   @include background(url('#{$assetPath}/img/icons/i-bid-auction-circle.svg'), contain, no-repeat);
+// }
+// .icon-bid-muted {
+//   @include background(url('#{$assetPath}/img/icons/i-bid-muted.svg'), contain, no-repeat);
+// }
+// .icon-listing {
+//   @include background(url('#{$assetPath}/img/icons/i-listing.svg'), contain, no-repeat);
+// }
+// .icon-add-auction {
+//   @include background(url('#{$assetPath}/img/icons/i-add-aution.svg'), contain, no-repeat);
+// }
+// .icon-calendar {
+//   @include background(url('#{$assetPath}/img/icons/i-calendar.svg'), contain, no-repeat);
+// }
+
+// .icon-map {
+//   @include background(url('#{$assetPath}/img/icons/i-map.svg'), contain, no-repeat);
+// }
+
+// .icon-filter {
+//   @include background(url('#{$assetPath}/img/icons/i-filter.svg'), contain, no-repeat);
+// }
+
+// .icon-menu {
+//   @include background(url('#{$assetPath}/img/icons/i-menu.svg'), contain, no-repeat);
+// }
+
+// .icon-cart {
+//   @include background(url('#{$assetPath}/img/icons/i-cart.svg'), contain, no-repeat);
+// }
+
+// .icon-user {
+//   @include background(url('#{$assetPath}/img/icons/i-user.svg'), contain, no-repeat);
+// }
+
+// .icon-bed {
+//   @include background(url('#{$assetPath}/img/icons/i-bed.svg'), contain, no-repeat);
+// }
+
+// .icon-bath {
+//   @include background(url('#{$assetPath}/img/icons/i-bath.svg'), contain, no-repeat);
+// }
+
+// .icon-squarefeet {
+//   @include background(url('#{$assetPath}/img/icons/i-squarefeet.svg'), contain, no-repeat);
+// }
+
+// .icon-architecture {
+//   @include background(url('#{$assetPath}/img/icons/i-architecture.svg'), contain, no-repeat);
+// }
+
+// .icon-mail-sub {
+//   @include background(url('#{$assetPath}/img/icons/i-mail-sub.svg'), contain, no-repeat);
+// }
+
+// .icon-pdf {
+//   @include background(url('#{$assetPath}/img/icons/i-pdf.svg'), contain, no-repeat);
+// }
+
+// .icon-province {
+//   @include background(url('#{$assetPath}/img/icons/i-province.svg'), contain, no-repeat);
+// }
+
+// .icon-eye {
+//   @include background(url('#{$assetPath}/img/icons/i-eye.svg'), contain, no-repeat);
+// }
+
+// .icon-call {
+//   @include background(url('#{$assetPath}/img/icons/i-call.svg'), contain, no-repeat);
+// }
+// .icon-login {
+//   @include background(url('#{$assetPath}/img/icons/i-login.svg'), contain, no-repeat);
+// }
+// .icon-check {
+//   @include background(url('#{$assetPath}/img/icons/i-check.svg'), contain, no-repeat);
+// }
+// .icon-close {
+//   @include background(url('#{$assetPath}/img/icons/i-close.svg'), contain, no-repeat);
+// }
+// .icon-facebook-white {
+//   @include background(url('#{$assetPath}/img/icons/i-facebook-white.svg'), contain, no-repeat);
+// }
+// .icon-linkedin-white {
+//   @include background(url('#{$assetPath}/img/icons/i-linkedin-white.svg'), contain, no-repeat);
+// }
+// .icon-twitter-white {
+//   @include background(url('#{$assetPath}/img/icons/i-twitter-white.svg'), contain, no-repeat);
+// }
+// .icon-back {
+//   @include background(url('#{$assetPath}/img/icons/i-back.svg'), contain, no-repeat);
+// }
+// .icon-info {
+//   @include background(url('#{$assetPath}/img/icons/i-info.svg'), contain, no-repeat);
+// }
+// .icon-grid {
+//   @include background(url('#{$assetPath}/img/icons/i-view-grid.svg'), contain, no-repeat);
+// }
+// .icon-sort {
+//   @include background(url('#{$assetPath}/img/icons/i-sort.svg'), contain, no-repeat);
+// }
+// .icon-type-image {
+//   @include background(url('#{$assetPath}/img/icons/i-type-image.svg'), contain, no-repeat);
+// }
+// .icon-type-pdf {
+//   @include background(url('#{$assetPath}/img/icons/i-type-pdf.svg'), contain, no-repeat);
+// }
+// .icon-type-other {
+//   @include background(url('#{$assetPath}/img/icons/i-type-other.svg'), contain, no-repeat);
+// }
+// .icon-gavel-circle {
+//   @include background(url('#{$assetPath}/img/icons/i-bid-auction-circle.svg'), contain, no-repeat);
+//   &:hover {
+//     @include background(
+//       url('#{$assetPath}/img/icons/i-bid-auction-primary.svg'),
+//       contain,
+//       no-repeat
+//     );
+//   }
+// }
+// .icon-edit {
+//   @include background(url('#{$assetPath}/img/icons/i-edit.svg'), contain, no-repeat);
+// }
+// .icon-attachment {
+//   @include background(url('#{$assetPath}/img/icons/i-attachment.svg'), contain, no-repeat);
+// }
+
+// .icon-no-post {
+//   width: 160px;
+//   height: 100px;
+//   @include background(url('#{$assetPath}/img/icons/i-no-post.svg'), contain, no-repeat);
+// }
+// .icon-payment-success {
+//   width: 130px;
+//   height: 110px;
+//   @include background(url('#{$assetPath}/img/icons/i-payment-success.svg'), contain, no-repeat);
+// }
+// .icon-checked {
+//   width: 32px;
+//   height: 25px;
+//   @include background(url('#{$assetPath}/img/icons/i-checked.svg'), contain, no-repeat);
+// }
+// .icon-fail {
+//   width: 32px;
+//   height: 25px;
+//   @include background(url('#{$assetPath}/img/icons/i-fail.svg'), contain, no-repeat);
+// }
+// .icon-left-filter {
+//   width: 24px;
+//   height: 25px;
+//   @include background(url('#{$assetPath}/img/icons/i-left-filter.svg'), contain, no-repeat);
+// }
+// .icon-house {
+//   @include background(url('#{$assetPath}/img/icons/i-marker-home-white.svg'), auto, no-repeat);
+// }
+// .icon-land {
+//   @include background(url('#{$assetPath}/img/icons/i-marker-land-white.svg'), auto, no-repeat);
+// }
+// .icon-apartment {
+//   @include background(url('#{$assetPath}/img/icons/i-marker-aparment-white.svg'), auto, no-repeat);
+// }
+// .icon-apartment {
+//   @include background(url('#{$assetPath}/img/icons/i-marker-aparment-white.svg'), auto, no-repeat);
+// }
+// .icon-x314 {
+//   @include background(url('#{$assetPath}/img/icons/x314.svg'), auto, no-repeat);
+// }
+// .icon-zalo {
+//   @include background(url('#{$assetPath}/img/icons/i-zalo.svg'), auto, no-repeat);
+// }
+// .icon-facebook-blue {
+//   @include background(url('#{$assetPath}/img/icons/i-facebook-blue.svg'), auto, no-repeat);
+// }
+// .icon-copylink {
+//   @include background(url('#{$assetPath}/img/icons/i-copylink.svg'), auto, no-repeat);
+// }
+// // Checked validate
+// .checkmark-icon {
+//   opacity: 0;
+//   &.valid {
+//     opacity: 0;
+//     transition: all 0.3s ease-in;
+//     animation: checkmarkAnim 300ms ease-in forwards;
+//   }
+// }
+// .icon-lock {
+//   width: 28px;
+//   height: 24px;
+//   @include background(url('#{$assetPath}/img/icons/i-lock.svg'), contain, no-repeat);
+// }
+// .icon-question {
+//   width: 28px;
+//   height: 24px;
+//   @include background(url('#{$assetPath}/img/icons/i-question.svg'), contain, no-repeat);
+// }
+// @keyframes checkmarkAnim {
+//   0% {
+//     opacity: 1;
+//     color: #ccc;
+//     transform: scale(1);
+//   }
+//   50% {
+//     opacity: 0.5;
+//     color: $color-success;
+//     transform: scale(0.8);
+//   }
+//   100% {
+//     opacity: 1;
+//     color: $color-success;
+//     transform: scale(1);
+//   }
+// }
+
+// .checkmark-circle {
+//   width: 24px;
+//   height: 24px;
+//   position: relative;
+//   display: inline-block;
+//   vertical-align: top;
+// }
+// .checkmark-circle .background {
+//   width: 24px;
+//   height: 24px;
+//   border-radius: 50%;
+//   border: 1px solid $color-success;
+//   position: absolute;
+// }
+// .checkmark-circle .checkmark {
+//   border-radius: 5px;
+// }
+// .checkmark-circle .checkmark.draw:after {
+//   -webkit-animation-delay: 100ms;
+//   -moz-animation-delay: 100ms;
+//   animation-delay: 100ms;
+//   -webkit-animation-duration: 1s;
+//   -moz-animation-duration: 1s;
+//   animation-duration: 1s;
+//   -webkit-animation-timing-function: ease;
+//   -moz-animation-timing-function: ease;
+//   animation-timing-function: ease;
+//   -webkit-animation-name: checkmark;
+//   -moz-animation-name: checkmark;
+//   animation-name: checkmark;
+//   -webkit-transform: scaleX(-1) rotate(135deg);
+//   -moz-transform: scaleX(-1) rotate(135deg);
+//   -ms-transform: scaleX(-1) rotate(135deg);
+//   -o-transform: scaleX(-1) rotate(135deg);
+//   transform: scaleX(-1) rotate(135deg);
+//   -webkit-animation-fill-mode: forwards;
+//   -moz-animation-fill-mode: forwards;
+//   animation-fill-mode: forwards;
+// }
+// .checkmark-circle .checkmark:after {
+//   opacity: 1;
+//   height: 12px;
+//   width: 7px;
+//   -webkit-transform-origin: left top;
+//   -moz-transform-origin: left top;
+//   -ms-transform-origin: left top;
+//   -o-transform-origin: left top;
+//   transform-origin: left top;
+//   border-right: 8px solid white;
+//   border-top: 8px solid white;
+//   border-radius: 2.5px !important;
+//   content: '';
+//   left: 6px;
+//   top: 12px;
+//   position: absolute;
+// }
+
+// @-webkit-keyframes checkmark {
+//   0% {
+//     height: 0;
+//     width: 0;
+//     opacity: 1;
+//   }
+//   20% {
+//     height: 0;
+//     width: 7px;
+//     opacity: 1;
+//   }
+//   40% {
+//     height: 12px;
+//     width: 7px;
+//     opacity: 1;
+//   }
+//   100% {
+//     height: 12px;
+//     width: 7px;
+//     opacity: 1;
+//   }
+// }
+// @-moz-keyframes checkmark {
+//   0% {
+//     height: 0;
+//     width: 0;
+//     opacity: 1;
+//   }
+//   20% {
+//     height: 0;
+//     width: 7px;
+//     opacity: 1;
+//   }
+//   40% {
+//     height: 12px;
+//     width: 7px;
+//     opacity: 1;
+//   }
+//   100% {
+//     height: 12px;
+//     width: 7px;
+//     opacity: 1;
+//   }
+// }
+// @keyframes checkmark {
+//   0% {
+//     height: 0;
+//     width: 0;
+//     opacity: 1;
+//   }
+//   20% {
+//     height: 0;
+//     width: 7px;
+//     opacity: 1;
+//   }
+//   40% {
+//     height: 12px;
+//     width: 7px;
+//     opacity: 1;
+//   }
+//   100% {
+//     height: 12px;
+//     width: 7px;
+//     opacity: 1;
+//   }
+// }
+// $hamburger-width: 27px;
+// .hamburger {
+//   display: inline-block;
+//   cursor: pointer;
+//   transition-property: opacity, filter;
+//   transition-duration: 0.15s;
+//   transition-timing-function: linear;
+//   font: inherit;
+//   color: inherit;
+//   text-transform: none;
+//   background-color: transparent;
+//   border: 0;
+//   margin: 0;
+//   overflow: visible;
+// }
+// .hamburger:hover {
+//   opacity: 0.7;
+// }
+// .hamburger.is-active:hover {
+//   opacity: 0.7;
+// }
+// .hamburger.is-active .hamburger-inner,
+// .hamburger.is-active .hamburger-inner::before,
+// .hamburger.is-active .hamburger-inner::after {
+//   background-color: #fff;
+// }
+
+// .hamburger-box {
+//   width: $hamburger-width;
+//   height: 19px;
+//   display: inline-block;
+//   position: relative;
+// }
+
+// .hamburger-inner {
+//   display: block;
+//   top: 50%;
+//   margin-top: -2px;
+// }
+// .hamburger-inner,
+// .hamburger-inner::before,
+// .hamburger-inner::after {
+//   width: $hamburger-width;
+//   height: 3px;
+//   background-color: #fff;
+//   border-radius: 4px;
+//   position: absolute;
+//   transition-property: transform;
+//   transition-duration: 0.15s;
+//   transition-timing-function: ease;
+// }
+// .hamburger-inner::before,
+// .hamburger-inner::after {
+//   content: '';
+//   display: block;
+// }
+// .hamburger-inner::before {
+//   top: -10px;
+// }
+// .hamburger-inner::after {
+//   bottom: -10px;
+// }
+// .hamburger--slider .hamburger-inner {
+//   top: 2px;
+// }
+// .hamburger--slider .hamburger-inner::before {
+//   top: 8px;
+//   transition-property: transform, opacity;
+//   transition-timing-function: ease;
+//   transition-duration: 0.15s;
+// }
+// .hamburger--slider .hamburger-inner::after {
+//   top: 16px;
+// }
+
+// .hamburger--slider.is-active .hamburger-inner {
+//   transform: translate3d(0, 8px, 0) rotate(45deg);
+// }
+// .hamburger--slider.is-active .hamburger-inner::before {
+//   transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+//   opacity: 0;
+// }
+// .hamburger--slider.is-active .hamburger-inner::after {
+//   transform: translate3d(0, -16px, 0) rotate(-90deg);
+// }
+// .swiper-button-next {
+//   background: url("#{$assetPath}/img/icons/i-prev.svg") no-repeat!important;
+//   background-size: cover;
+//   transform: rotate(180deg);
+// }
+// .swiper-button-prev {
+//   background: url("#{$assetPath}/img/icons/i-prev.svg") no-repeat!important;
+//   background-size: cover;
+// }

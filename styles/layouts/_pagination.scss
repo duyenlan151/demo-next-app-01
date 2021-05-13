@@ -1,0 +1,17 @@
+.pagination {
+    @include flex-center;
+    .mat-button, .mat-flat-button, .mat-icon-button, .mat-stroked-button {
+        min-width: 40px;
+        padding: 0 4px;
+    }
+    .pagination__pages {
+        .pagination__page.active {
+            color: $color-link;
+        }
+    }
+    .pagination__prev.pagination__end, .pagination__next.pagination__end {
+        a {
+            color: #d2d2d2;
+        }
+    }
+}

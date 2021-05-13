@@ -1,0 +1,70 @@
+@import 'home_benefit_process';
+@import 'home_faq';
+@import 'home_introduction';
+@import 'home_popular';
+@import 'home_slider';
+@import 'home_support';
+@import 'home_fixed_bar';
+
+// Home common css
+.home-section {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
+  &__title {
+      margin-bottom: .4rem;
+      color: #333;
+      @include font-title-mid;
+  }
+  &__desc {
+      @include font-body();
+      position: relative;
+      &::after {
+          content: "";
+          position: absolute;
+          bottom: -1rem;
+          left: 50%;
+          transform: translateX(-50%);
+          height: 1px;
+          width: 100px;
+          background-color: #000000;
+      }
+  }
+}
+
+app-auction-newest {
+  .card {
+    margin-bottom: 0;
+    @include screen('(max-width: 991px)') {
+      margin-bottom: 2.4rem;
+    }
+  }
+  .auction-new-footer {
+    text-align: center;
+    @include screen(mobile) {
+      margin-top: 1rem;
+    }
+    a {
+      text-decoration: none;
+      color: #E39A00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .text {
+        @include font-body-special(bold);
+      }
+      .icon {
+        display: block;
+        margin-left: .4rem;
+        transform: rotate(-90deg);
+      }
+    }
+  }
+  @include screen('(max-width: 991px)') {
+    .card-item:last-child {
+      .card {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,125 @@
+.subscription {
+    @include font(15px);
+    &__link {
+        color: $color-link;
+    }
+
+    &__link--dec {
+        text-decoration: underline;
+    }
+
+    .sub-unregistered,
+    .sub-registered {
+        background-color: $bg-color-light;
+        padding: 1rem;
+    }
+
+    .sub-unregistered {
+        @include flex-center;
+        height: 350px;
+        margin-bottom: 2rem;
+        border-radius: 4px;
+
+        &__content {
+            max-width: 320px;
+            @include flex-center;
+            flex-direction: column;
+            @include font-body();
+
+            &-icon {
+                width: 70px;
+                height: 70px;
+            }
+
+            &-desc {
+                text-align: center;
+            }
+
+        }
+    }
+
+    .sub-registered {
+        .table-responsive {
+            &::-webkit-scrollbar-track {
+                box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+                background-color: $color-gray-light;
+            }
+
+            &::-webkit-scrollbar {
+                height: 5px;
+                background-color: $color-gray-light;
+            }
+
+            &::-webkit-scrollbar-thumb {
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 10px;
+            }
+
+            .table {
+                thead {
+                    tr {
+                        th {
+                            white-space: nowrap;
+                            @include font-body(bold);
+                        }
+                    }
+                }
+
+                tbody {
+                    tr {
+                        border-bottom: 1px solid #e2e2e2;
+                        td {
+                            @include font-body();
+                            white-space: nowrap;
+                            &:nth-child(2) {
+                                color: $color-link;
+                            }
+                            .subscription__link {
+                                font-weight: normal;
+                            }
+                        }
+                        
+                        
+                    }
+                    .unread {
+                        td {
+                            // font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sub-unregistered {
+    @include flex-center;
+    height: 350px;
+    margin-bottom: 2rem;
+    border-radius: 4px;
+    background-color: $bg-color-light;
+
+    &__content {
+        max-width: 320px;
+        @include flex-center;
+        flex-direction: column;
+        @include font-body();
+
+        &-icon {
+            width: 70px;
+            height: 70px;
+        }
+
+        &-desc {
+            text-align: center;
+        }
+
+        &-act {
+            a {
+                color: $color-link;
+                text-decoration: underline;
+            }
+        }
+
+    }
+}

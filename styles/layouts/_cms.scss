@@ -1,0 +1,40 @@
+.cms-wrapper {
+  a {
+    color: $color-link;
+    @include font-body();
+  }
+  
+  width: 100%;
+  .cms-content {
+    width: 100%;
+    p {
+      @include font-body();
+    }
+    .cms-title {
+      @include font-title;
+    }
+    .auction__map {
+      width: 100%;
+      height: 400px;
+    }
+  }
+}
+
+.banner-section {
+  width: 100%;
+  height: 550px;
+  background-position: center !important;
+  background-size: cover !important;
+  @include flex-center;
+  .information {
+    @include flex-center;
+    flex-direction: column;
+    .information__btn {
+      width: 260px;
+      background-color: $color-link;
+      color: #fff;
+      border-radius: 4px;
+      text-align: center;
+    }
+  }
+}

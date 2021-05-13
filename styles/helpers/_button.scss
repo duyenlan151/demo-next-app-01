@@ -1,0 +1,309 @@
+button, .button{
+  height: 40px;
+  @media screen and (max-width: 991px) {
+    height: 37px;
+  }
+}
+
+button{
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: $bg-color-primary;
+  color: $body-color-bg;
+  border: none;
+  &:disabled {
+    background: rgba($color-link, .3);
+  }
+}
+@mixin mat-button-oval($bg: $bg-color-second, $color: $color-blue, $rad: 2rem) {
+  background-color: $bg;
+  color: $color;
+  border-radius: $rad;
+  padding: .3rem .8rem !important;
+  font-weight: bold !important;
+}
+
+@mixin mat-button-shape($bg: $bg-color-second, $color: $color-blue) {
+  background-color: $bg;
+  color: $color;
+  font-weight: bold !important;
+}
+.btn-w-150 {
+  width: 150px;
+}
+
+.btn-w-200 {
+  width: 200px;
+}
+
+button:focus {
+    outline: none;
+}
+
+.mat-flat-button.mat-primary {
+  background-color: $bg-color-primary !important;
+}
+
+.btn-bid-primary {
+  @include background(url('#{$assetPath}/img/icons/i-bid-auction-primary.svg'), contain, no-repeat);
+}
+
+.btn-view-auction {
+  @include background(url('#{$assetPath}/img/icons/i-view-auction.svg'), contain, no-repeat);
+}
+
+.btn-view-image {
+  @include background(url('#{$assetPath}/img/icons/i-view-image.svg'), contain, no-repeat);
+}
+
+.btn-view-map {
+  @include background(url('#{$assetPath}/img/icons/i-view-map.svg'), contain, no-repeat);
+}
+
+.btn-view-street {
+  @include background(url('#{$assetPath}/img/icons/i-view-street.svg'), contain, no-repeat);
+}
+
+.btn-view-route {
+  @include background(url('#{$assetPath}/img/icons/i-view-route.svg'), contain, no-repeat);
+}
+
+.btn-minus {
+  @include background(url('#{$assetPath}/img/icons/i-minus.svg'), contain, no-repeat);
+}
+
+.btn-plus {
+  @include background(url('#{$assetPath}/img/icons/i-plus.svg'), contain, no-repeat);
+}
+
+.btn-back {
+  @include background(url('#{$assetPath}/img/icons/i-back.svg'), contain, no-repeat);
+}
+
+.mat-raised-button.mat-button-base.mat-primary {
+  background-color: $color-yellow;
+  @media screen and (max-width: 768px) {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+}
+.btn-oval {
+  @include mat-button-oval();
+}
+.btn-oval-success {
+  @include mat-button-oval($bg-color-success, $color-success);
+}
+// .btn-oval-warning {
+//   @include mat-button-oval($bg-color-warning, $color-warning);
+// }
+
+.btn-shape {
+  border: none;
+  @include mat-button-shape();
+  .mat-button-wrapper {
+    @include flex-center;
+    flex-direction: column;
+  }
+  
+}
+.btn-shape-success {
+  border: none;
+  @include mat-button-shape($bg-color-success, $color-success);
+  .mat-button-wrapper {
+    @include flex-center;
+    flex-direction: column;
+  }
+}
+.btn-shape-danger {
+  border: none;
+  @include mat-button-shape($bg-color-danger, $color-danger);
+  .mat-button-wrapper {
+    @include flex-center;
+    flex-direction: column;
+  }
+}
+.btn-shape-warning {
+  border: none;
+  @include mat-button-shape(#FFCC01, #8E5500);
+  .mat-button-wrapper {
+    @include flex-center;
+    flex-direction: column;
+  }
+}
+
+
+.mat-button, 
+.mat-fab, 
+.mat-flat-button, 
+.mat-icon-button,
+.mat-mini-fab, 
+.mat-raised-button, 
+.mat-stroked-button{
+  @include font-body-large();
+  // height: auto;
+  padding: 5px 0;
+}
+
+// datetime picker input
+ngx-mat-datetime-content {
+  .mat-calendar-header {
+    padding: 0;
+    .mat-calendar-controls {
+      margin: 0;
+    }
+  }
+  .mat-calendar-content {
+    padding-bottom: 0;
+    .mat-calendar-table {
+      .mat-calendar-table-header {
+        th {
+          padding: 0;
+        }
+      }
+    }
+  }
+  .mat-icon-button {
+    height: 40px;
+    &:disabled {
+      background: rgba(235, 235, 235, .5);
+    }
+  }
+  .mat-calendar-body-selected {
+    background-color: $bg-color-primary;
+  }
+  ngx-mat-timepicker {
+    .table {
+      margin: 0 !important;
+      .tbody {
+        tr {
+          &:first-child {
+            td {
+              border-top: none;
+            }
+          }
+          td {
+            padding: 0;
+            .mat-form-field-infix {
+              padding-top: 0 !important;
+              padding-left: 0 !important;
+            }
+          }
+          .spacer {
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+  .time-container {
+    padding-top: 0 !important;
+  }
+  .actions {
+    .mat-button {
+      padding: 0;
+      height: 28px;
+    }
+  }
+}
+mat-datepicker-toggle {
+  .mat-icon-button.mat-button-base {
+    background-color: $color-white;
+  }
+}
+span[type="button"] {
+  // border: none !important;
+  // background: transparent !important;
+  // box-shadow: none !important;
+  // -webkit-box-shadow: 0 15px 5px red !important;
+  // -moz-box-shadow: none !important;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.double-swipe {
+  padding: 0!important;
+  overflow: hidden;
+  .mat-button-wrapper{
+    padding: 0 15px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-transform: uppercase;
+    &:before,
+    &:after {
+      box-sizing: border-box;
+      transition: 0.5s ease-in-out;
+      z-index: -1;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-bottom: 80px solid green;
+    }
+
+    &:before {
+
+      right: -50px;
+      border-right: 50px solid transparent;
+      transform: translateX(-100%);
+    }
+    &:after {
+      left: -50px;
+      border-left: 50px solid transparent;
+      transform: translateX(100%);
+    }
+    &:hover {
+      &:before { transform: translateX(-30%); }
+      &:after { transform: translateX(30%); }
+    }
+
+  }
+}
+
+.button-effect, .mat-stroked-button {
+  overflow: hidden !important;
+  position: relative !important;
+  &:before {
+    content: '';
+    position: absolute;
+    top: -25px;
+    left: -85px;
+    width: 20px;
+    height: 175px;
+    background: #ffffff;
+    transform-origin: center;
+    transform: rotate(35deg);
+    // opacity: 0;
+    // display: none;
+  }
+  &:hover {
+    border-color: white;
+    &:before {
+      // opacity: 1;
+      // display: block;
+      left: 150%;
+      transition: all 1s; 
+    }
+  }
+}
+.button-cancel-primary{
+  border: 1px solid $color-danger !important;
+  color: $color-danger;
+  .icon{
+    color: $color-danger;
+  }
+}
+.button-incomplete-primary, .button-detail-primary{
+  border: 1px solid $color-link !important;
+  color: $color-link;
+  .icon{
+    color: $color-link;
+  }
+}

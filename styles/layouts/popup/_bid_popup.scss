@@ -1,0 +1,174 @@
+.bid-popup .popup {
+  &_header {
+    .btn-close {
+      display: inline-block;
+      font-size: 35px;
+      line-height: 35px;
+      top: -12px;
+      right: -5px;
+      cursor: pointer;
+    }
+  }
+  &_body {
+    .btn-resend {
+      width: fit-content;
+      align-self: baseline;
+      white-space: nowrap;
+      margin: 16px 0 0 18px;
+      cursor: pointer;
+    }
+    .btn-confirm {
+      background-color: $bg-color-primary;
+      padding: 9px 0;
+    }
+    .btn {
+      width: fit-content;
+      padding: 9px 70px;
+      @media screen and (max-width: 576px) {
+        padding: 9px 20px;
+      }
+    }
+  }
+}
+.custom-dialog {
+  @media screen and (max-width: 600px) {
+    min-height: 100vh !important;
+    min-width: 100vw;
+  }
+  .mat-dialog-container {
+    padding: 0;
+  }
+}
+app-order-bidding-list, app-bidding-statement, app-user-join-bidding {
+  .ngx-pagination {
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .ngx-pagination li.current {
+    background: none;
+    color: $color-link;
+    font-weight: bold;
+  }
+  .ngx-pagination .pagination-previous a::before,
+  .ngx-pagination .pagination-previous.disabled::before {
+    display: none;
+  }
+  .ngx-pagination .pagination-next a::after,
+  .ngx-pagination .pagination-next.disabled::after {
+    display: none;
+  }
+  .btn-groups button {
+    width: 315px;
+    height: 45px;
+  }
+  .dialog-header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    .header-text {
+      margin: 0 auto;
+    }
+  }
+  .dialog-body {
+    padding: 20px 10px;
+    .table-wrapper {
+      // background-color: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      // box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+      padding: 0 10px;
+    }
+    table {
+      tbody {
+        overflow: hidden !important;
+        height: unset !important;
+      }
+      table-layout: fixed;
+      border-collapse: collapse;
+      td,
+      th {
+        border-bottom: 1px solid #ddd;
+      }
+      th {
+        border-top: none;
+      }
+      thead tr {
+        color: $body-color-text;
+        font-weight: bold;
+      }
+      tbody.body tr.isHighest {
+        color: #e39a00;
+      }
+      tbody .status {
+        color: $color-white;
+        padding: 5px 10px;
+        line-height: 1;
+        border-radius: 25rem;
+        &.completed {
+          background-color: #e39a00;
+        }
+        &.incomplete {
+          background-color: $color-blue;
+        }
+        &.approved {
+          background-color: $color-success;
+        }
+        &.fail {
+          color: $color-danger;
+          background-color: $bg-color-danger;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .dialog-body {
+      overflow: scroll;
+      height: calc(100vh - 60px);
+      padding: 5px;
+    }
+    table {
+      border: 0;
+    }
+
+    table thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    table tr {
+      border-bottom: 3px solid #ddd;
+      display: block;
+      margin-bottom: 0.625em;
+    }
+
+    table td {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+    }
+
+    table td::before {
+      /*
+    * aria-label has no advantage, it won't be read inside a table
+    content: attr(aria-label);
+    */
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+    }
+
+    table td:last-child {
+      border-bottom: 0;
+    }
+  }
+}

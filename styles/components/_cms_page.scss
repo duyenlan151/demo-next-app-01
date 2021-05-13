@@ -1,0 +1,88 @@
+app-google-map {
+  .auction__map {
+    width: 100% !important;
+    // height: 500px;
+    height: 50vh;
+    .gm-style-iw-c, .gm-style-iw-d{
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+    .card-header, .card-body{
+      padding: 10px;
+    }
+  }
+}
+
+.cms-page {
+  .cms-page-header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__title {
+    @include font-title-mid;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 1px solid #ccc;
+      width: 100px;
+    }
+  }
+  p {
+    max-width: 760px;
+    @include font-body();
+  }
+}
+.contact-us {
+ .contact-us-info {
+     border: 2px dashed #ccc;
+     padding: 1rem;
+   .title {
+     @include font-title;
+     text-transform: uppercase;
+     color: $color-link;
+   }
+   .icon {
+     color: $color-link;
+   }
+   &__icon{
+     border-radius: 4px;
+     background: $color-link;
+     padding: 6px 0;
+     .icon-wrapper{
+       flex-grow: 1;
+       color: #fff;
+       padding: 3px 0;
+      .icon{
+        color: $color-white;
+        font-size: 20px;
+      }
+      &:not(:first-child){
+        border-left: 1px solid $color-white;
+      }
+     }
+   }
+  }
+  .contact-us-form {
+    .mat-form-field {
+      .mat-form-field-subscript-wrapper {
+        padding: 0;
+      }
+    }
+    .contact-button {
+      max-width: 250px;
+      text-align: center;
+      border-radius: 4px;
+    }
+    .contact-us-success-icon {
+      width: 200px;
+      margin-bottom: 30px;
+    }
+  }
+}

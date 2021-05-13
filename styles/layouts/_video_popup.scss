@@ -1,0 +1,21 @@
+.video-dialog {
+  position: relative !important;
+  height: 300px;  
+  video {
+    max-width: 550px;
+    height: 300px;
+  }
+  &__actions {
+    position: absolute;
+    top: -14px;
+    right: 0;
+    &-close {
+      font-size: 28px;
+      font-weight: bold;
+    }
+  }
+  .mat-dialog-container {
+    padding: 0;
+    overflow: hidden;
+  }
+}

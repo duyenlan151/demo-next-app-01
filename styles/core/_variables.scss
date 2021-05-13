@@ -1,0 +1,76 @@
+$color-primary: #0b162b;
+$color-primary-50: rgba(11, 22, 43, 0.5);
+$color-secondary: #ffcc01;
+$color-primary-50: rgba(254, 203, 1, 0.5);
+$color-link: #0C2A64;
+$color-gray-light: #efefef;
+$color-gray: #4b525a;
+$color-white: #fff;
+$color-blue: #00178e;
+$color-warning: #8e5500;
+$color-success: #008e1b;
+$color-error: #8e0000;
+$color-danger: #d2232a;
+$color-yellow: #e39a00;
+$color-facebook: #3b5998;
+
+$bg-color-primary: #0C2A64;
+$bg-color-primary-50: rgba(30, 136, 245, 0.5);
+$bg-color-light: #f4f8fc;
+$bg-color-second: #cedbe8;
+$bg-color-success: #cee8d3;
+$bg-color-warning: #e7e8ce;
+$bg-color-error: #e8cece;
+$bg-color-danger: #f2bdbf;
+
+// Path
+$assetPath: '../../assets';
+
+// Body
+$body-color-bg: #ffffff;
+$body-color-text: #0b162b;
+
+//Font
+$font-primary: 'Inter-Regular';
+$font-primary-bold: 'Inter-Bold';
+// letter-spacing
+$spacing-18: -0.18px;
+$spacing-33: -0.33px;
+$spacing-47: -0.47px;
+$spacing-134: -1.34px;
+
+// Toolbar
+$toolbar-height: 70px;
+$toolbar-bg: #0C2A64;
+// Top-bar
+$top-bar-height: 40px;
+$top-bar-bg: #0C2A64;
+// Sidebar
+$sidebar-width: 64px;
+// filter box:
+$filter-box: 50px;
+
+// Footer
+$footer-height: 49px;
+// Body
+$body-bg-light: $bg-color-light;
+
+$transition-all: all 0.15s ease-out;
+
+$border-color: #4b525a;
+$border-sub-menu: rgba(204, 204, 204, 0.4);
+$border-color-table: rgba(130, 130, 130, 0.3);
+$border-color-footer: #9D9D9D;
+$grey: #e0e0e0;
+
+// Bootstrap Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1600px;
+
+// z-index
+$z-index-lv1: 35;
+$z-index-lv2: 40;

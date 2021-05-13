@@ -1,0 +1,319 @@
+$default-font-family: 'Inter-Regular';
+
+@mixin font(
+  $size,
+  $weight: normal,
+  $family: $default-font-family,
+  $lineHeight: 140%,
+  $spacing: -0.18px
+) {
+  font-size: $size;
+  font-family: $family;
+  font-weight: $weight;
+  line-height: $lineHeight;
+  letter-spacing: $spacing;
+}
+
+//Used for main section headers
+@mixin font-title-large {
+  @include screen('(min-width: 992px)') {
+    @include font(43px, bold, $font-primary-bold, 140%, -1.34px);
+  }
+  @include screen('(max-width: 991px)') {
+    @include font(32px, bold, $font-primary-bold, 140%, -0.89px);
+  }
+  @include screen('(max-width: 767px)') {
+    @include font(28px, bold, $font-primary-bold, 140%, -0.64px);
+  }
+}
+//Used for main section headers
+@mixin font-title-mid {
+  @include screen('(min-width: 992px)') {
+    @include font(32px, bold, $font-primary-bold, 140%, -0.89px);
+  }
+  @include screen('(max-width: 991px)') {
+    @include font(28px, bold, $font-primary-bold, 140%, -0.64px);
+  }
+  @include screen('(max-width: 767px)') {
+    @include font(22px, bold, $font-primary-bold, 140%, -0.47px);
+  }
+}
+//Used for sub section headers
+@mixin font-title {
+  @include screen('(min-width: 992px)') {
+    @include font(22px, bold, $font-primary-bold, 140%, -0.47px);
+  }
+  @include screen('(max-width: 991px)') {
+    @include font(18px, bold, $font-primary-bold, 140%, -0.33px);
+  }
+  @include screen('(max-width: 767px)') {
+    @include font(16px, bold, $font-primary-bold, 34px, -0.18px);
+  }
+}
+@mixin font-title-sub {
+  @include screen('(min-width: 992px)') {
+    @include font(18px, bold, $font-primary-bold, 140%, -0.33px);
+  }
+  @include screen('(max-width: 991px)') {
+    @include font(18px, bold, $font-primary-bold, 140%, -0.33px);
+  }
+  @include screen('(max-width: 767px)') {
+    @include font(16px, bold, $font-primary-bold, 140%, -0.18px);
+  }
+}
+@mixin font-title-normal($weight: normal){
+  @include screen('(min-width: 992px)') {
+    @include font(18px, $weight, $font-primary, 140%, normal);
+  }
+  @include screen('(max-width: 991px)') {
+    @include font(18px, $weight, $font-primary, 140%, normal);
+  }
+  @include screen('(max-width: 767px)') {
+    @include font(16px, $weight, $font-primary, 140%, normal);
+  }
+}
+//Used for body copy and paragraphs of text
+@mixin font-body-huge($weight: normal) {
+  @include screen('(min-width: 992px)') {
+    @include font(18px, $weight, $font-primary, 140%, -0.33px);
+  }
+}
+//Used for introduction text
+@mixin font-body-large($weight: normal) {
+  @include screen('(min-width: 992px)') {
+    @include font(16px, $weight, $font-primary-bold, 140%, -0.18px);
+  }
+  @include screen('(max-width: 991px)') {
+    @include font(14px, $weight, $font-primary-bold, 140%, -0.09px);
+  }
+}
+// text body regular
+@mixin font-body-regular($weight: normal) {
+  @include screen('(min-width: 992px)') {
+    @include font(14px, $weight, $font-primary, 140%, normal);
+  }
+  @include screen('(max-width: 991px)') {
+    @include font(12px, $weight, $font-primary, 140%, normal);
+  }
+}
+@mixin font-body-sm($weight: normal) {
+  @include screen('(min-width: 768px)') {
+    @include font(13px, $weight, $font-primary, 140%, normal);
+  }
+}
+//Used for body copy and paragraphs of text
+@mixin font-body($weight: normal, $font-primary: $default-font-family, $lineHeight: 140%) {
+  @include screen('(min-width: 1601px)') {
+    @include font(16px, $weight, $font-primary, $lineHeight, -0.18px);
+  }
+  @include screen('(max-width: 1600px)') {
+    @include font(14px, $weight, $font-primary, $lineHeight, -0.09px);
+  }
+  //@include screen('(max-width: 991px)') {
+  //  @include font(13px, $weight, $font-primary, $lineHeight, -0.09px);
+  //}
+  //@include screen('(max-width: 767px)') {
+  //  @include font(12px, $weight, $font-primary, $lineHeight, 0.01px);
+  //}
+}
+//Used for body copy and paragraphs of text
+@mixin font-body-special($weight: normal, $font-primary: $default-font-family, $lineHeight: 140%) {
+  // @include screen('(min-width: 992px)') {
+  @include font(14px, $weight, $font-primary, $lineHeight, -0.09px);
+  // }
+  // @include screen('(max-width: 991px)') {
+  //   @include font(13px, $weight, $font-primary, $lineHeight, -0.09px);
+  // }
+  // @include screen('(max-width: 767px)') {
+  //   @include font(12px, $weight, $font-primary, $lineHeight, 0.01px);
+  // }
+}
+
+//Used for body copy and paragraphs of text
+@mixin font-body-small($weight: normal) {
+  @include screen('(min-width: 992px)') {
+    @include font(12px, $weight, $font-primary, 140%, -0.08px);
+  }
+  @include screen('(max-width: 991px)') {
+    @include font(10px, $weight, $font-primary, 16px, 0.1px);
+  }
+}
+@mixin font-body-tiny($weight: normal) {
+  @include font(10px, $weight, $font-primary, 16px, 0.1px);
+}
+
+@for $i from 8 to 32 {
+  .sz-#{$i} {
+    @include font($i + px);
+  }
+
+  .sz-b-#{$i} {
+    @include font($i + px, 700);
+  }
+
+  .sz-l-#{$i} {
+    @include font($i + px, 100);
+  }
+}
+
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+
+.t-a-c {
+  text-align: center;
+}
+.t-a-l {
+  text-align: left;
+}
+.t-a-r {
+  text-align: right;
+}
+
+.text-title-large {
+  @include font-title-large; // 43px
+}
+.text-title-mid {
+  @include font-title-mid; // 32px
+}
+.text-title {
+  @include font-title; // 22px
+}
+.text-title-sub {
+  @include font-title-sub; // 18px
+}
+.text-body-huge {
+  @include font-body-huge; // 18px
+}
+.text-body-large {
+  @include font-body-large; // 16px
+}
+.text-body-regular {
+  @include font-body-regular; // 14px
+}
+.text-body {
+  @include font-body; // 16px
+}
+.text-body-small {
+  @include font-body-small; // 12px
+}
+.text-body-tiny {
+  @include font-body-tiny; // 10px
+}
+.text-title-normal{
+  @include font-title-normal;
+}
+.text-body-sm{
+  @include font-body-sm; // 14px normal
+}
+.text-bold {
+  font-weight: 900;
+}
+.text-link {
+  color: $color-link !important;
+}
+.text-gray {
+  color: $color-gray !important;
+}
+.text-gray-light {
+  color: $color-gray-light !important;
+}
+.text-white {
+  color: $color-white !important;
+}
+.text-black {
+  color: $color-primary !important;
+}
+.text-blue {
+  color: $color-blue !important;
+}
+.text-red {
+  color: $color-danger !important;
+}
+.text-green {
+  color: $color-success !important;
+}
+.text-blue {
+  color: $color-blue !important;
+}
+.text-secondary {
+  color: $color-secondary !important;
+}
+.text-warning {
+  color: $color-warning !important;
+}
+.text-yellow {
+  color: $color-yellow !important;
+}
+.text-danger {
+  color: $color-danger !important;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.bg-white {
+  background-color: $body-color-bg;
+}
+.bg-color-light {
+  // #f4f8fc
+  background-color: $bg-color-light;
+}
+.bg-link {
+  background-color: $color-link;
+}
+.bg-danger {
+  background-color: $bg-color-danger !important;
+}
+.bg-danger-dark {
+  background-color: #d2232a !important;
+}
+.bg-warning {
+  background-color: $color-secondary;
+}
+.bg-warning-dark {
+  background-color: #e39a00 !important;
+}
+.bg-green {
+  background-color: $bg-color-success !important;
+}
+.bg-dark-green {
+  background-color: $color-success;
+}
+.bg-dark-blue {
+  background-color: $color-blue;
+}
+.bg-green-dark {
+  background-color: #008e1b !important;
+}
+.bg-blue {
+  background-color: $bg-color-second;
+}
+.bg-blue-dark {
+  background-color: #0c2a64 !important;
+}
+.bg-black {
+  background-color: $color-primary;
+}
+.bg-red {
+  background-color: $color-danger;
+}
+.bg-gray {
+  background-color: $color-gray !important;
+}
+.button-bg-green {
+  background-color: $color-success !important;
+}
+
+.fit-content {
+  width: fit-content;
+  height: fit-content;
+}
+.filter-white {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(318deg) brightness(106%) contrast(101%);
+}
+.cursor-pointer {
+  cursor: pointer;
+}

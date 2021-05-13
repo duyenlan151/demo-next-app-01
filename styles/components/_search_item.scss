@@ -1,0 +1,128 @@
+.search-item {
+  display: flex;
+  padding: .8rem 0;
+  overflow: hidden;
+  @media screen and (max-width: $breakpoint-md - 1){
+    flex-wrap: wrap;
+    padding: .7rem;
+  }
+  .filters {
+    flex: 6;
+    @media screen and (max-width: $breakpoint-md - 1){
+      flex: 0 0 100%;
+    }
+    .filters-title {
+      @include font-body-large;
+      display: block;
+      margin-bottom: 0.1rem;
+    }
+    .filter-content {
+      overflow: hidden;
+      font-size: 14px;
+    }
+    .filter-list {
+      padding: 0;
+      margin: 0;
+      width: 40%;
+      @media screen and (max-width: $breakpoint-md - 1){
+        width: 100%;
+      }
+      .filter-item {
+          list-style: none;
+      }
+    }
+    .show-more {
+      margin-left: -4px;
+      cursor: pointer;
+      @media screen and (max-width: $breakpoint-sm - 1){
+        font-size: 12px;
+      }
+    }
+  }
+  .action {
+    flex: 2;
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $breakpoint-md - 1) {
+      margin-top: .8rem;
+      flex-direction: row-reverse;
+      .action-button.mat-stroked-button{
+        width: 50%;
+        margin-left: 5px;
+        margin-right: 0 !important;
+      }
+    }
+    button {
+      @media screen and (max-width: $breakpoint-md - 1) {
+        font-size: 12px;
+      }
+      &:nth-child(1) {
+        min-width: 150px;
+        width: max-content;
+      }
+      &:nth-child(2) {
+        flex: 1;
+        &.mat-stroked-button:not([disabled]) {
+          border-color: red;
+          color: red;
+          background: #fff;
+        }
+        .mat-button-wrapper {
+          width: 100%;
+          @include flex-center;
+        }
+        @media screen and (max-width: $breakpoint-md - 1) {
+          margin: 0 !important;
+        }
+      }
+    }
+    .action-button{
+      background: $color-link;
+      .mat-button-wrapper{
+        .icon{
+          color: $color-white;
+        }
+        color: $color-white;
+        @include flex-center;
+      }
+      &.button-cancel{
+        background: $color-white;
+        .mat-button-wrapper{
+          color: $color-link;
+        }
+        .icon{
+          color: $color-link;
+        }
+      }
+    }
+    @media screen and (max-width: $breakpoint-md - 1) {
+      flex: 0 0 100%;
+    }
+    .action-button {
+      width: max-content;
+      color: $color-link;
+    }
+    .mat-stroked-button:not([disabled]) {
+      border-color: $color-link;
+      width: 50%;
+      @media screen and (max-width: $breakpoint-xxl - 1) {
+        height: 37px;
+      }
+    }
+  }
+  .destroy {
+    flex: 1;
+  }
+  .icon {
+    color: red;
+    user-select: none;
+    cursor: pointer;
+    margin-right: 10px;
+    @media screen and (max-width: $breakpoint-md - 1) {
+      font-size: 20px;
+    }
+  }
+  .destroy-mobile {
+    cursor: pointer;
+  }
+}

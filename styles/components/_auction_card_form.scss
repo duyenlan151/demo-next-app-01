@@ -1,0 +1,102 @@
+.form-card {
+  background-color: $color-white;
+  &__section {
+    .section-header {
+      display: flex;
+    justify-content: space-between;
+      &__title {
+        @include font-body(bold);
+        text-transform: uppercase;
+      }
+      &__desc {
+        color: $color-success;
+        @include font-body-small(bold);
+      }
+    }
+  }
+  &__asset {
+    .asset {
+      &__image {
+        &-img {
+          width: 100%;
+          height: auto;
+          max-height: 160px;
+          object-position: center;
+          object-fit: cover;
+        } 
+      }
+      &__heading {
+        margin-top: .5rem;
+        &-title {
+          @include font-body(bold);
+          /* autoprefixer: ignore next */
+          -webkit-box-orient: vertical;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          max-height: calc(19.6px * 2);
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          text-overflow: ellipsis;
+        }
+      }
+      &__information {
+        .asset-item {
+          display: flex;
+          margin-top: 8px;
+          .icon {
+            display: block;
+            flex: 0 0 20px;
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+          }
+          .text {
+            @include font-body();
+            /* autoprefixer: ignore next */
+            -webkit-box-orient: vertical;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            max-height: calc(19.6px * 2);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+    }
+  }
+  &__bid {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    margin-top: 10px;
+    .bid-info-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .bid-info-item {
+        $mb: 6px;
+        flex-basis: 50%;
+        margin-bottom: $mb * 2;
+        &:first-child {
+          .bid-live {
+            margin-right: $mb;
+          }
+        }
+        &:last-child {
+          .bid-live {
+            margin-left: $mb;
+          }
+        }
+        .bid-live {
+          padding: 8px; 
+          border-radius: 4px;
+          @include font-body(bold);
+          @include flex-center;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

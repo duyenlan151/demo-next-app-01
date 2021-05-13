@@ -1,0 +1,66 @@
+
+.home-benefits {
+  padding: 3rem 0;
+  a.features-box:hover {
+    color: unset;
+  }
+  &__content {
+      margin-top: 2rem;
+      padding-bottom: 1.5rem;
+  }
+  &__actions {
+      margin-bottom: 1rem;
+      &-btn {
+          width: auto;
+          color: $color-white !important;
+      }
+  }
+}
+
+.home-auc-process {
+  background-color: $bg-color-light;
+  padding: 3rem 0;
+  a.features-box:hover {
+    color: unset;
+  }
+  // &__content {
+  //     .row {
+  //         .col-md-3 {
+  //             &:nth-child(1),
+  //             &:nth-child(2),
+  //             &:nth-child(3)
+  //             &:nth-child(4)
+  //             {
+  //                 .features-box {
+  //                     flex-direction: column-reverse;
+  //                     @media screen and (max-width: $breakpoint-md - 1px) {
+  //                         flex-direction: column;
+  //                     }
+  //                 }
+  //             }
+  //             &:first-child, &:last-child {
+  //                 .features-box {
+  //                     color: $color-link;
+  //                 }
+  //             }
+  //         }
+  //     }
+  // }
+//   &__col {
+//       display: flex;
+//       justify-content: center;
+//       margin-top: .8rem;
+//       &:nth-child(1),
+//       &:nth-child(2),
+//       &:nth-child(3) {
+//           align-items: flex-end;
+//       }
+//       &:nth-child(4),
+//       &:nth-child(5),
+//       &:nth-child(6) {
+//           @media screen and (min-width: $breakpoint-md) {
+//               margin-top: 1.6rem;
+//           }
+//       }
+// }
+}

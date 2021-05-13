@@ -1,0 +1,21 @@
+.action__success {
+  // max-width: 400px;
+    .action__content {
+        .item__success {
+            margin-top: 15px;
+            
+            h3 {
+                @include font-title;
+            }
+            h4 {
+                @include font-body-large(bold)
+            }
+            a {
+                color: $color-white;
+                background-color: $color-link;
+                border-radius: 4px;
+                width: 100%
+            }
+        }
+    }
+}

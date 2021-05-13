@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useForm, Controller } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
+// import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "Yup";
-import Select from "react-select";
+// import Select from "react-select";
 
 const schema = yup.object().shape({
     // firstName: yup.string().required(),
@@ -53,20 +53,6 @@ function Detail(props){
         reset();
     }
 
-    const handleValueChange = (e) => {
-        // console.log('value change');
-        // let key = e.target.id;
-        // let value = e.target.value;
-    
-        // setMyBlog({
-        //   ...myBlog,
-        //   [key]: value
-        // });
-    }
-    // const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    // const onSubmit = data => console.log(data);
-    // const { control, handleSubmit } = useForm();
-
     useEffect(() => {
       reset(myBlog)
     }, [myBlog]);
@@ -78,6 +64,7 @@ function Detail(props){
     const onSubmit = (data, e) => {
       e.preventDefault();
       console.log(data);
+
       setIsEdit(true);
       reset();
     };
@@ -108,7 +95,6 @@ function Detail(props){
                   id="author"
                   {...register("author")} 
                   disabled={isEdit}
-                  onChange={handleValueChange}
                 />
               </div>
               <div className="form-group">
@@ -120,7 +106,6 @@ function Detail(props){
                   id="title"
                   {...register("title")} 
                   disabled={isEdit}
-                  onChange={handleValueChange}
                 />
               </div>
               <div className="form-group">
@@ -143,7 +128,6 @@ function Detail(props){
                   id="content"
                   {...register("content")} 
                   disabled={isEdit}
-                  onChange={handleValueChange}
                 />
               </div>
               <div className="form-group">
@@ -155,7 +139,6 @@ function Detail(props){
                   id="description"
                   {...register("description")} 
                   disabled={isEdit}
-                  onChange={handleValueChange}
                 />
               </div>
               <div className="form-group">
@@ -167,7 +150,6 @@ function Detail(props){
                   id="date"
                   {...register("publishedAt")} 
                   disabled={isEdit}
-                  onChange={handleValueChange}
                 />
               </div>
             </div>

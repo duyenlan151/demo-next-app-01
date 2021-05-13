@@ -1,0 +1,130 @@
+.auth {
+    padding: 10px 24px;
+    position: relative;
+    @media screen and (max-width: $breakpoint-md) {
+              padding: 10px 12px;
+    }
+    .success-icon {
+        user-select: none;
+        color: $color-success;
+        opacity: 0;
+        transition: all 1s cubic-bezier(0.25, 0.1, 0, 1.35);
+    }
+    .success-icon__show {
+        opacity: 1;
+    }
+    .auth__confirm {
+      border-radius: 4px;
+      box-shadow: 0 1px 3px gray;
+    }
+    &__close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        background-color: transparent !important;
+        border: none !important;
+        cursor: pointer;
+        &-icon {
+            font-size: 24px;
+        }
+    }
+    &__header {
+        &-title {
+            text-align: center;
+            font-size: 24px;
+        }
+    }
+    &__content {
+        height: max-content;
+        max-height: none !important;
+        &-header {
+            text-align: center;
+            padding: .5rem 0;
+            a {
+                text-decoration: underline;
+                font-weight: bold;
+            }
+        }
+        &-header--otp {
+            text-align: center;
+        }
+        .form-auth {
+            margin-top: 14px;
+            &__group {
+              margin-bottom: 2px;
+            }
+            &__group--otp {
+                width: 80%;
+            }
+            &__checkbox {
+                label {
+                    font-weight: 400;
+                }
+            }
+            .auth__link-otp {
+                display: inline-block;
+                width: 20%;
+                text-align: center;
+                text-decoration: underline;
+                font-weight: bold;
+                transform: translateY(-5px);
+            }
+            .mat-checkbox-layout {
+                white-space: normal !important;
+            }
+        }
+    }
+    &__actions {
+        &-button {
+          border-radius: 4px;
+          box-shadow: 0 1px 3px gray;
+        }
+        &-desc {
+            margin-top: 14px;
+        }
+        &-close {
+            margin-top: 6px;
+            text-align: center;
+        }
+    }
+    &__link {
+        color: $color-link !important;
+        cursor: pointer;
+        outline: none;
+    }
+    &__link-dec {
+        text-decoration: underline;
+    }
+}
+.auth {
+  margin-bottom: 100px !important;
+  .form-content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  &__spinner {
+    @include flex-center;
+  }
+  .form-auth__group--otp {
+    width: 88%;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+  .auth__link-otp {
+    display: inline-block;
+    text-align: center;
+    width: 12%;
+    transform: translateY(-5px);
+    @media screen and (max-width: 767px) {
+      display: none;
+    }
+    &.suffix {
+      display: block;
+      transform: translateY(-10px);
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

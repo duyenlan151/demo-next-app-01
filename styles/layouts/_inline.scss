@@ -1,0 +1,18 @@
+hr {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  border-top: none;
+}
+
+.filter-control__select {
+  width: 120px !important;
+}
+
+.home-auc-process, .home-benefits {
+  .text-center {
+    margin-top: 40px;
+  }
+}
+.spinner-text {
+  font-size: 12px; line-height: 1;top: 14px; left: 11px;
+}

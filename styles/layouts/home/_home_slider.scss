@@ -1,0 +1,87 @@
+.home-marketing-slider {
+  .slider-search-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 900px;
+    @include screen('(max-width: 900px)') {
+      width: 700px;
+    }
+    @include screen('(max-width: 800px)') {
+      width: 90%;
+    }
+  }
+  width: 100%;
+  position: relative;
+  height: calc(100vh - #{$toolbar-height} - #{$top-bar-height} - 4px);
+  overflow: hidden;
+  @media screen and (max-width: 991px) {
+    height: calc(100vh - #{$toolbar-height} - 4px);
+  }
+    .swiper-slide {
+        display: inline-block;
+        height: calc(100vh - #{$toolbar-height});
+        overflow: hidden !important;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        &__content {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            z-index: 10;
+            color: $color-white;
+        }
+        &__action {
+            position: absolute;
+            bottom: 20%;
+            left: 30%;
+            z-index: 10;
+            color: $color-white;
+            font-weight: bold;
+            border-color: $color-gray;
+        }
+    }
+    &__progress-bar {
+        position: absolute;
+        height: 4px;
+        background-color: #1E88F5;
+        width: 0%;
+        bottom: 0;
+        left: 0;
+        z-index: 6;
+    }
+    &__overlay {
+        position: absolute;
+        z-index: 5;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba($color: #000000, $alpha: .5);
+    }
+    .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+        display: none;
+        width: 20% !important;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        .swiper-pagination-bullet-active {
+            background-color: #1E88F5 !important;
+            border: none;
+        }
+    }
+    .swiper-pagination-progressbar {
+        top: auto;
+        bottom: 0 !important;
+    }
+    .swiper-pagination-bullet-first {
+        border: none !important;
+    }
+    .swiper-pagination-bullet {
+        opacity: 1;
+        background-color: #fff;
+    }
+}

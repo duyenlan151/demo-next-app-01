@@ -1,0 +1,134 @@
+app-auction-sidebar {
+  .mat-progress-spinner circle,
+  .mat-spinner circle {
+    stroke: $color-success !important;
+  }
+  .sidebar {
+    border-radius: 4px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: $body-color-bg;
+    &__header {
+      min-height: 62px;
+      @include font-title-sub;
+      display: flex;
+      align-items: center;
+    }
+    &__content {
+      border-top: 1px solid rgba(11, 22, 43, 0.1);
+      border-bottom: 1px solid rgba(11, 22, 43, 0.1);
+      .nav-group {
+        position: relative;
+        .ink-bar.router-link-active {
+          border-left: 2px solid $bg-color-primary;
+        }
+        .nav-link {
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          border-left: 2px solid #9d9d9d;
+          min-height: 80px;
+          &:hover {
+            background-color: $bg-color-light;
+          }
+          .icon, .icon-state {
+            width: 24px;
+            height: 24px;
+            &-preview {
+              @include background(url('#{$assetPath}/img/icons/i-preview.svg'), contain, no-repeat);
+            }
+            &-investor {
+              @include background(
+                url('#{$assetPath}/img/icons/i-investor.svg'),
+                contain,
+                no-repeat
+              );
+            }
+            &-policy {
+              @include background(url('#{$assetPath}/img/icons/i-policy.svg'), contain, no-repeat);
+            }
+            &-payment {
+              @include background(url('#{$assetPath}/img/icons/i-payment.svg'), contain, no-repeat);
+            }
+            &-participant {
+              @include background(url('#{$assetPath}/img/icons/i-group.svg'), contain, no-repeat);
+            }
+            &-bidding {
+              @include background(
+                url('#{$assetPath}/img/icons/i-bid-auction.svg'),
+                contain,
+                no-repeat
+              );
+            }
+            &-personal {
+              @include background(
+                url('#{$assetPath}/img/icons/i-personal.svg'),
+                contain,
+                no-repeat
+              );
+            }
+            &-history-payment {
+              @include background(
+                  url('#{$assetPath}/img/icons/i-history-payment.svg'),
+                  contain,
+                  no-repeat
+              );
+            }
+            &-enter {
+              @include background(url('#{$assetPath}/img/icons/i-enter.svg'), contain, no-repeat);
+            }
+            &-notify {
+              @include background(url('#{$assetPath}/img/icons/i-notify.svg'), contain, no-repeat);
+            }
+          }
+
+          .icon-state {
+            @include background(
+              url('#{$assetPath}/img/icons/i-unapproved.svg'),
+              contain,
+              no-repeat
+            );
+          }
+
+
+          .icon-state.icon-approved {
+            @include background(url('#{$assetPath}/img/icons/i-approved.svg'), contain, no-repeat);
+          }
+          .icon-state.icon-lock {
+            @include background(url('#{$assetPath}/img/icons/i-locked.svg'), contain, no-repeat);
+          }
+          &.router-link-active {
+            background-color: $bg-color-light;
+            .icon {
+              filter: invert(15%) sepia(89%) saturate(944%) hue-rotate(194deg) brightness(95%) contrast(108%) !important;
+              &-state {
+                // @include background(
+                //   url('#{$assetPath}/img/icons/i-circle-outline-checked.svg'),
+                //   contain,
+                //   no-repeat
+                // );
+              }
+            }
+          }
+        }
+      }
+    }
+    &__footer {
+      padding: 17px 14px;
+    }
+  }
+}
+.sidebar-contact {
+  .contact-feature {
+    border-radius: 4px;
+    padding: 12px 6px;
+    background: $bg-color-light;
+    span.icon-contact {
+      width: 64px;
+      height: 64px;
+      @include background(url('#{$assetPath}/img/icons/i-contact.svg'), contain, no-repeat);
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.home-fixed-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 50px;
+  z-index: 100;
+  width: 100%;
+  background-color: #0C2A64;
+  a, a:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a:hover {
+    color: #ccc;
+  }
+}
+.fixed-bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  .fixed-bar-link {
+    color: $color-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .icon {
+    display: flex;
+    justify-content: center;
+  }
+  .text {
+    @include font-body-special();
+    color: $color-white;
+  }
+}
+.center-link {
+  @include flex-center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  position: fixed;
+  left: 50%;
+  bottom: -54px;
+  
+  background-color: #E39A00;
+  color: $color-white;
+  &__content {
+    height: 50px;
+    margin-top: calc(50% - 90px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

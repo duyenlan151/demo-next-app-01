@@ -1,0 +1,642 @@
+.review {
+  background: #fff;
+  @include screen(mobile) {
+    margin-top: 8px;
+    margin-bottom: 15px;
+  }
+}
+.review,
+.reg-bid-popup-inner {
+  // wrapper form and sidebar
+  .auc-form-wrapper {
+    .review-sidebar {
+      background-color: $color-white;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      .form-card {
+        margin-bottom: 1rem;
+      }
+    }
+    //form body
+    .app-auction-form {
+      background-color: $color-white;
+      padding: 1rem;
+      @include screen(mobile) {
+        padding: 0;
+        padding-top: 1rem;
+      }
+      button {
+        padding: 6px 8px;
+      }
+      //deposit
+      .deposit-type {
+        .icon-deposit {
+          @include background(url('#{$assetPath}/img/icons/i-deposit.svg'), contain, no-repeat);
+          width: 85px;
+          height: 64px;
+          display: inline-block;
+        }
+        mat-radio-group {
+          overflow-x: auto;
+          overflow-y: hidden;
+          -webkit-overflow-scrolling: touch;
+          &::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.8);
+            background-color: $color-gray-light;
+          }
+          &::-webkit-scrollbar {
+            height: 5px;
+            background-color: rgba(0, 0, 0, 0.8);
+          }
+          &::-webkit-scrollbar-thumb {
+            background: rgba($color: $color-link, $alpha: 1);
+            border-radius: 10px;
+          }
+        }
+        mat-radio-button {
+          .mat-radio-label-content {
+            &::after {
+              content: '';
+              border: 10px solid;
+              border-color: $color-link transparent transparent transparent;
+              position: absolute;
+              bottom: -20px;
+              left: 50%;
+              transform: translateX(-50%);
+              opacity: 0;
+              visibility: hidden;
+              @include screen(mobile) {
+                display: none;
+              }
+            }
+          }
+          &.mat-radio-checked {
+            .mat-radio-label-content {
+              &::after {
+                opacity: 1;
+                visibility: visible;
+              }
+            }
+          }
+        }
+      }
+      .deposit-type {
+        width: 100%;
+        .mat-radio-group {
+          width: 100%;
+          display: flex;
+          .mat-radio-button {
+            flex: 0 0 calc(40% - 8px);
+            margin-right: 0;
+            &:first-child {
+              margin-right: 8px;
+            }
+            &:last-child {
+              margin-left: 8px;
+            }
+            .mat-radio-label {
+              .mat-radio-label-content {
+                width: 100%;
+                .label {
+                  width: 100%;
+                }
+              }
+            }
+          }
+          .mat-radio-button.disabled {
+            .label {
+              background-color: #efefef;
+              color: #ccc;
+              cursor: no-drop;
+            }
+          }
+        }
+      }
+      .deposit-form {
+        .error-message {
+          color: $color-danger;
+        }
+        .update {
+          display: none;
+        }
+        .deposit-form-wrapper {
+          border: 1px solid #ccc;
+          padding: 35px;
+          border-radius: 4px;
+          @include screen(mobile) {
+            padding: 10px;
+          }
+        }
+        .form-group {
+          display: flex;
+          justify-content: center;
+        }
+
+        .deposit-dropzone {
+          display: flex;
+          justify-content: center;
+          // dropzone {
+          //   width: 100%;
+          // }
+          .dz-wrapper {
+            height: unset;
+            overflow: unset !important;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+          }
+          .dz-preview {
+            border: none !important;
+            min-height: 300px;
+            .dz-image {
+              width: 100% !important;
+              height: 100% !important;
+            }
+          }
+          .dz-remove {
+            top: -10px;
+            right: -10px;
+          }
+          .dz-message {
+            display: inline-block;
+            padding: 8px 12px;
+            border: none;
+            width: 270px !important;
+            min-width: 270px !important;
+            height: auto !important;
+            overflow: unset !important;
+            background-color: $bg-color-primary !important;
+            color: $color-white;
+            box-shadow: 0 1px 3px grey;
+            border-radius: 4px;
+            max-width: unset;
+            cursor: pointer;
+            .dz-text {
+              @include flex-center;
+              left: 0;
+            }
+            .text {
+              padding-left: 6px;
+            }
+            @include screen(mobile) {
+              width: 244px !important;
+              min-width: 244px !important;
+              .material-icons {
+                display: none;
+              }
+            }
+          }
+        }
+        .has-file,
+        .update-view {
+          .update {
+            display: block;
+          }
+          .first {
+            text-transform: lowercase;
+          }
+          .text {
+            display: flex;
+          }
+          .dz-message {
+            background: #ccc !important;
+            border: none !important;
+          }
+          .dz-message * {
+            cursor: no-drop !important;
+          }
+        }
+        &__graph {
+          @include font-body();
+        }
+        .has-file {
+          .dz-message {
+            display: none !important;
+          }
+        }
+      }
+    }
+
+    // drop zone
+    .review {
+      .dz-message {
+        display: none !important;
+      }
+      .dz-remove {
+        display: none !important;
+      }
+    }
+    .dz-success-mark,
+    .dz-error-mark {
+      display: none;
+    }
+    .dz-message {
+      background-color: $body-color-bg;
+      border-radius: 4px;
+      border: 2px dashed $color-link;
+    }
+    .cmnd-wrapper {
+      height: 100%;
+      width: 100%;
+      position: relative;
+      p,
+      h5 {
+        margin-bottom: 0;
+      }
+      .labels {
+        position: absolute;
+        width: 100%;
+        top: calc(100% + 6px);
+        left: 50%;
+        transform: translateX(-50%);
+        @include screen(mobile) {
+          top: calc(100% - 28px);
+        }
+        h5 {
+          @include font-body(bold);
+          color: $body-color-text;
+        }
+        p {
+          @include font-body-tiny();
+          color: #f44336;
+        }
+      }
+    }
+    .has-file {
+      .dz-message {
+        display: none;
+      }
+    }
+    .dirty.error {
+      .dropzone-input {
+        .dz-message {
+          border: 2px dashed $color-danger !important;
+        }
+      }
+      h5,
+      p {
+        color: $color-danger;
+      }
+    }
+
+    .dropzone-info {
+      width: 100%;
+      margin: 20px;
+    }
+    .dz-preview {
+      border-radius: 4px;
+      border: 2px dashed $color-link !important;
+      margin: 8px;
+      width: 100%;
+      height: 100%;
+      padding: 10px;
+      position: relative;
+      margin-right: 20px;
+      .dz-image {
+        position: absolute;
+        width: 90% !important;
+        height: 90% !important;
+        @include position-center;
+        overflow: hidden;
+        img {
+          width: 100%;
+          height: 100% !important;
+          object-fit: cover;
+          object-position: center;
+          &:hover {
+            box-shadow: 1px 1px 3px gray;
+            transition: all 300ms ease;
+          }
+        }
+      }
+      .dz-remove {
+        z-index: 30;
+        top: 1%;
+        right: 1%;
+      }
+    }
+  }
+  .input-col-wrap {
+    // margin-top: 1rem;
+  }
+  .dropzone-wrapper {
+    height: 220px;
+    @include screen(mobile) {
+      height: auto;
+    }
+    .dropzone-input {
+      padding-bottom: 0px;
+      @include screen(mobile) {
+        padding-bottom: 40px;
+      }
+    }
+    &.disabled {
+      * {
+        color: #ccc !important;
+        cursor: default;
+      }
+      .dropzone.dz-clickable .dz-message * {
+        cursor: default;
+      }
+      .note-button {
+        background: #f9f9f9;
+      }
+      .dz-message {
+        cursor: default;
+      }
+    }
+  }
+  .dropzone-previews {
+    height: 100%;
+    width: 100%;
+    display: flex;
+  }
+  .dropzone-previews-custom {
+    display: none;
+    height: 100%;
+    overflow-x: unset;
+    overflow-y: unset;
+  }
+  .has-file {
+    .dropzone-previews-custom {
+      display: block;
+      top: 0;
+      left: 0;
+    }
+  }
+  .next-btn:hover {
+    .icon-arrow-right {
+      transform: translateX(0px);
+      transition: all 0.3s ease-in;
+      animation: next-icon 1s ease infinite;
+    }
+  }
+  @keyframes next-icon {
+    from {
+      transform: translateX(0px);
+    }
+    to {
+      transform: translateX(5px);
+    }
+  }
+}
+
+.app-register-bid,
+.app-form-review,
+.deposit-bid {
+  .btn {
+    cursor: pointer;
+  }
+  .btn-back {
+    width: 24px;
+    height: 24px;
+  }
+  .policies {
+    mat-expansion-panel-header {
+      height: max-content !important;
+      padding: 12px 30px 12px 20px;
+    }
+    .mat-expansion-panel-header {
+      align-items: flex-start;
+    }
+    .mat-expansion-panel:not([class*='mat-elevation-z']) {
+      box-shadow: none;
+    }
+  }
+  .app-auction-form-deposit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 75%;
+    min-height: 50vh;
+  }
+  .app-auction-form-deposit.waiting {
+    .icon-payment {
+      height: 150px;
+      width: 192px;
+      @include background(url('#{$assetPath}/img/icons/i-payment-waiting.svg'), contain, no-repeat);
+    }
+    .icon-policy {
+      height: 100px;
+      width: 100px;
+      @include background(url('#{$assetPath}/img/icons/i-policy-waiting.svg'), contain, no-repeat);
+      filter: invert(91%) sepia(99%) saturate(5505%) hue-rotate(176deg) brightness(104%)
+        contrast(99%);
+    }
+  }
+  .app-auction-form-deposit.success {
+    .icon-payment {
+      height: 150px;
+      width: 192px;
+      @include background(url('#{$assetPath}/img/icons/i-payment-success.svg'), contain, no-repeat);
+    }
+  }
+}
+.edit-dropzone {
+  flex: 0 0 82px;
+}
+
+.register-bid-popup {
+  height: 90%;
+  @media screen and (max-width: 991px) {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100%;
+    .row {
+      padding: 0;
+    }
+    .col-12 {
+      padding: 0;
+    }
+  }
+  @media screen and (max-width: 767px) {
+    .app-auction-form {
+      padding: 0 !important;
+    }
+    .mat-horizontal-stepper-header {
+      padding: 0px 8px;
+    }
+  }
+  @media screen and (max-width: 320px) {
+    .mat-horizontal-stepper-header-container {
+      flex-wrap: wrap;
+      .mat-stepper-horizontal-line {
+        display: none;
+      }
+    }
+    .mat-horizontal-stepper-header {
+      height: 50px;
+    }
+    .app-auction-form .heading {
+      margin-left: -15px;
+    }
+  }
+  .table {
+    margin-top: 20px;
+    thead {
+      background: #212529;
+      color: #fff;
+    }
+    tbody {
+      tr:first-child {
+        color: #e39a00;
+      }
+    }
+  }
+  .mat-dialog-container {
+    padding: 0;
+  }
+  .reg-bid-popup-inner {
+    position: relative;
+    height: 100%;
+    padding-bottom: 100px;
+  }
+  .person-form {
+    padding-bottom: 60px;
+  }
+  .auc-form-wrapper {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 20px;
+    padding-top: 0;
+    height: calc(100% - 60px);
+    @include custom-scroll-x;
+  }
+  .dialog-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    padding: 10px 20px;
+    background-color: #fff;
+    box-shadow: 0.1px 0.2px 2px gray;
+    display: flex;
+    justify-content: space-between;
+    .dialog-footer-left {
+      display: flex;
+      align-items: center;
+      span {
+        color: $color-danger;
+      }
+    }
+    .dialog-footer-right {
+      display: flex;
+      justify-content: flex-end;
+      button {
+        min-width: 100px;
+        width: max-content;
+        @include flex-center;
+      }
+      .btn-comeback {
+        margin-right: 10px;
+      }
+    }
+  }
+  .dialog-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    background-color: $bg-color-primary;
+    @include flex-center;
+    h2 {
+      text-transform: uppercase;
+      @include font-body(bold);
+      text-align: center;
+      color: $color-white;
+      margin: 0;
+    }
+    .dialog-close {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      .icon {
+        color: $color-white;
+      }
+    }
+  }
+
+  // Stepper override
+  .mat-horizontal-stepper-header-container {
+    @media screen and (min-width: $breakpoint-lg) {
+      padding: 0 100px;
+    }
+  }
+  mat-step-header[ng-reflect-index='1'] {
+    .mat-step-label {
+      height: 100%;
+      .mat-step-title {
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+  // dropzone overide {
+  // .dropzone-previews-custom {
+  //   top: 10px;
+  //   height: 90%;
+  //   .dz-preview {
+  //     height: 80% !important;
+  //   }
+  // }
+}
+
+.person-form {
+  position: relative;
+  min-height: 100px;
+}
+.form-spinner {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $color-white;
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+.text-status {
+  background: #cedbe8;
+  border-radius: 2rem;
+}
+.icon-bank {
+  height: 80px;
+      flex: 0 0 calc(100% / 6);
+      box-sizing: border-box;
+      padding: 10px;
+  div {
+    &.checked {
+      border: 2px solid $color-link;
+    }
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border: 1px solid #cccccc;
+    &:hover {
+      border-color: $color-link;
+    }
+  }
+  @media screen and (max-width: 1024px){
+    flex: 0 0 25%;
+  }
+  @media screen and (max-width: 576px){
+    flex: 0 0 50%;
+  }
+}
