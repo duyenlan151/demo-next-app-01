@@ -15,7 +15,6 @@ NavLink.defaultProps = {
 };
 
 function NavLink({ children, href, exact, ...props }) {
-    console.log(props);
     const { pathname } = useRouter();
     const isActive = exact ? pathname === href : pathname.startsWith(href);
     
