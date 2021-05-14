@@ -1,16 +1,24 @@
 import { NavLink } from "./NavLink";
 import { useRouter } from "next/router";
 import useTrans from '../../../lib/hooks/useTrans';
+import { useState } from 'react';
+import Link from 'next/link'
 
 function Nav(){
     const trans = useTrans();
     const router = useRouter();
     
-    const changeLang = (lang) => {
-        console.log(router);
-        router.push('/', router['asPath'], { locale: lang });
-    }
+    const {
+        locale,
+        locales,
+        defaultLocale = 'vi',
+        asPath: currentPath,
+      } = useRouter();
+    const options = locales?.filter((val) => val !== locale); // filter local hidden if active
 
+    const changeLang = (lang) => {
+        router.push(currentPath, '/', { locale:  lang});
+    }
     return(
         <nav className="navbar navbar-expand navbar-dark bg-dark">
             <div className="container">
@@ -22,8 +30,11 @@ function Nav(){
                             Language
                         </a>
                         <div className="dropdown-menu">
-                            <a className="dropdown-item" onClick={() => changeLang('vi')}>vi</a>
-                            <a className="dropdown-item" onClick={() => changeLang('en')}>en</a>
+                            {locales.map((elm) => (
+                                <Link href={currentPath} locale={elm}  key={elm}>
+                                    <a className="dropdown-item" >{elm}</a>
+                                </Link>
+                            ))}
                         </div>
                     </li>
                 </div>
