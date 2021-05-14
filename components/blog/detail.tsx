@@ -10,6 +10,14 @@ const schema = yup.object().shape({
     title: yup.string().required(),
   });
 
+interface IFormInput{
+  author: string,
+  title: string,
+  content: string,
+  description: string,
+  publishedAt: string,
+}
+
 function Detail(props){
     const { id } = props.params;
     const [data, setData] = useState({});
@@ -57,7 +65,7 @@ function Detail(props){
       reset(myBlog)
     }, [myBlog]);
 
-    const { register, reset, handleSubmit } =useForm({
+    const { register, reset, handleSubmit } =useForm<IFormInput>({
       defaultValues: myBlog,
     });
     
@@ -84,7 +92,7 @@ function Detail(props){
               
             }
           </div>
-          {/* {myBlog && (
+          {myBlog && (
             <div>
               <div className="form-group">
                 <label htmlFor="pwd">Author:</label>
@@ -110,7 +118,7 @@ function Detail(props){
                 <label htmlFor="pwd">Images:</label>
                 <div>
                   <img
-                    src={myBlog.urlToImage}
+                    src={myBlog['urlToImage']}
                     style={{maxWidth: '100%'}}
                   ></img>
                 </div>
@@ -147,7 +155,7 @@ function Detail(props){
                 />
               </div>
             </div>
-          )} */}
+          )}
         </form>
     )
 }
