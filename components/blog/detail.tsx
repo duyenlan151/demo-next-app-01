@@ -84,11 +84,10 @@ function Detail(props){
               
             }
           </div>
-          {myBlog && (
+          {/* {myBlog && (
             <div>
               <div className="form-group">
                 <label htmlFor="pwd">Author:</label>
-                {/* <h2>{myBlog.title}</h2> */}
                 <input
                   type="text"
                   className="form-control"
@@ -99,7 +98,6 @@ function Detail(props){
               </div>
               <div className="form-group">
                 <label htmlFor="pwd">Title:</label>
-                {/* <h2>{myBlog.title}</h2> */}
                 <input
                   type="text"
                   className="form-control"
@@ -113,7 +111,6 @@ function Detail(props){
                 <div>
                   <img
                     src={myBlog.urlToImage}
-                    // className={styles.img_thum}
                     style={{maxWidth: '100%'}}
                   ></img>
                 </div>
@@ -121,7 +118,6 @@ function Detail(props){
 
               <div className="form-group">
                 <label htmlFor="pwd">Content:</label>
-                {/* <p>{myBlog.content}</p> */}
                 <input
                   type="text"
                   className="form-control"
@@ -132,7 +128,6 @@ function Detail(props){
               </div>
               <div className="form-group">
                 <label htmlFor="pwd">Description:</label>
-                {/* <p>{myBlog.content}</p> */}
                 <input
                   type="text"
                   className="form-control"
@@ -143,7 +138,6 @@ function Detail(props){
               </div>
               <div className="form-group">
                 <label htmlFor="pwd">Date Create:</label>
-                {/* <p>{myBlog.content}</p> */}
                 <input
                   type="date"
                   className="form-control"
@@ -153,7 +147,7 @@ function Detail(props){
                 />
               </div>
             </div>
-          )}
+          )} */}
         </form>
     )
 }
